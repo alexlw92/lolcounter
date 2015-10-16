@@ -1,53 +1,90 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>CS188 Scalable Webservices</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <meta content="Daniel Yao" name="author" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" rel="stylesheet">
+
+  <title>LolCounter</title>
+
 </head>
+
 <body>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6">
-      <h1>Welcome#index</h1>
+
+<div class="ui grid">
+  <div class="row" style="background-color:#212121; color:#FFFFFF;"> <!-- 00B2EF -->
+    <div class="left floated column" style="line-height:80px;font-size:40px;text-align:left;padding-left:50px;">
+      LOLCounter
     </div>
-    <div class="col-md-6">
-      <p>BLAH BLAH BLAH</p>
-    </div>
-  </div>
-  <div class="row">
-    <form class="col-xs-8 col-xs-offset-2">
-      <input type="text" class="form-control" placeholder="Search" name="randomInput" style="border-radius:20px">
-    </form>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-2">
-        <%= "#{@results}" %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-2">
-        <% "Count to 10"['id'] %>
-        <br/>
-        <% 11.times do |i| %>
-            <%= i %>
-        <% end %>
-      <h4>roland was here >:D</h4>
+    <div class="right floated seven wide column" style="line-height:50px;padding-top:20px;">
+      <div class="ui action input">
+        <input type="text" name="sumName" placeholder="Summoner Name">
+        <select class="ui fluid dropdown" style="width:70px;">
+          <option selected="" value="na">NA</option>
+          <option value="euw">EUW</option>
+          <option value="kr">KR</option>
+        </select>
+        <div type="submit" class="ui button" style="background-color:#7777AD;">Search</div> <!-- 7777AD-->
+      </div>
     </div>
   </div>
-  <div class="row col-md-offset-2">
-    <div class="col-md-6">
-        <%= link_to("Go to Counter Pick Page",
-           :action => 'counterPick') %>
-    </div>
-    <div class="col-md-6">
-        <%= link_to("Go to Team Comp Page",
-           :action => 'teamComp') %>
+
+  <div class="row">
+    <div class="left floated grey column">
+      <div class="ui inverted menu">
+        <a class="item active">Home</a>
+        <a class="item">Charts</a>
+        <a class="item">Counterpicks</a>
+        <a class="item">Champions</a>
+        <a class="item">Team Comps</a>
+      </div>
     </div>
   </div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+<script>
+    $('.ui..input')
+            .form({
+                fields: {
+                    sumName     : 'empty'
+                }
+            });
+
+    $('.menu .item')
+            .tab();
+    $('.dropdown')
+            .dropdown();
+
+    var content = [
+        { title: 'Aatrox' },
+        { title: 'Ahri' },
+        { title: 'Akali' },
+        { title: 'Alistar' },
+        { title: 'Amumu' },
+        { title: 'Anivia' },
+        { title: 'Annie' },
+        { title: 'Ashe' },
+        { title: 'Azir' },
+        { title: 'Bard' },
+        { title: 'Blitzcrank' },
+        { title: 'Brand' },
+        { title: 'Braum' },
+        { title: 'Caitlyn' },
+        { title: 'Cassiopeia' }
+    ];
+
+    $('.ui.search')
+            .search({
+                source : content,
+                searchFullText: false,
+                searchDelay: 75
+            });
+
+</script>
 </body>
 </html>
