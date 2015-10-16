@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>CS188 Scalable Webservices</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="Daniel Yao" name="author" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Welcome#index</h1>
+    </div>
+    <div class="col-md-6">
+      <p>BLAH BLAH BLAH</p>
+    </div>
+  </div>
+  <div class="row">
+    <form class="col-xs-8 col-xs-offset-2">
+      <input type="text" class="form-control" placeholder="Search" name="randomInput" style="border-radius:20px">
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-2">
+        <%= "#{@results}" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-2">
+        <% "Count to 10"['id'] %>
+        <br/>
+        <% 11.times do |i| %>
+            <%= i %>
+        <% end %>
+      <h4>roland was here >:D</h4>
+    </div>
+  </div>
+  <div class="row col-md-offset-2">
+    <div class="col-md-6">
+        <%= link_to("Go to Counter Pick Page",
+           :action => 'counterPick') %>
+    </div>
+    <div class="col-md-6">
+        <%= link_to("Go to Team Comp Page",
+           :action => 'teamComp') %>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" rel="stylesheet">
+
+  <title>YO!</title>
+
+</head>
+
+<body>
+
+
+
+<div class="ui left aligned grid">
+  <div class="row" style="background-color:#373737; color:#FFFFFF;">
+    <div class="column" style="text-align: center;line-height:80px;font-size:45px;">
+      <div class="ui active tab" data-tab="spec">Team Comp Picker</div>
+      <div class="ui tab" data-tab="best">Best Team Comps</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column" style="width:190px;padding-left:20px;">
+      <div class="ui fluid vertical secondary menu">
+        <a class="active item" data-tab="spec">Specific Team</a>
+        <a class="item" data-tab="best">Best Teams</a>
+      </div>
+
+    </div>
+    <div class="ui active tab" data-tab="spec">
+      <div class="ui grid">
+        <div class="row">
+          <div class="column" style="width:300px;">
+            <div class="ui page grid">
+              <div class="row">
+                <div class="ui form">
+                  <div class="field">
+                    <label>Top</label>
+                    <div class="ui search">
+                      <input class="prompt" type="text" placeholder="Search champion">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="ui form">
+                  <div class="field">
+                    <label>Jungle</label>
+                    <div class="ui search">
+                      <input class="prompt" type="text" placeholder="Search champion">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="ui form">
+                  <div class="field">
+                    <label>Middle</label>
+                    <div class="ui search">
+                      <input class="prompt" type="text" placeholder="Search champion">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="ui form">
+                  <div class="field">
+                    <label>Marksman</label>
+                    <div class="ui search">
+                      <input class="prompt" type="text" placeholder="Search champion">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="ui form">
+                  <div class="field">
+                    <label>Support</label>
+                    <div class="ui search">
+                      <input class="prompt" type="text" placeholder="Search champion">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <button class="ui fluid button" type="submit">Search</button>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="column" style="width:500px;">
+            <br>
+            <h3 class="ui header">Team Comp: Darius, Rek'Sai, Ahri, Vayne, Janna</h3>
+            <br>
+            <h3 class="ui header">Games found with specified team comp: 1230</h3>
+            <br>
+            <h3 class="ui header">Win rate of team comp: 68%</h3>
+            <br><br>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui tab" data-tab="best">
+      <div class="ui grid">
+        <div class="center aligned column" style="width:500px;">
+          <br>
+          <h3 class="ui header">Best Team Comps</h3>
+          <br>
+          <h3 class="ui header">features: by region, timeline, etc. </h3>
+          <br>
+          <h3 class="ui header">display highest winrate team comps in a table </h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--
+<div class="ui grid container">
+
+    <div class="row">
+        <div class="ui left floated black three wide column">
+            <div class="ui inverted secondary vertical menu">
+                <a class="active item">Specific Team</a>
+                <a class="item">Best Teams</a>
+            </div>
+        </div>
+        <div class="ui five wide column">
+            <div class="ui page grid">
+                <div class="row">
+                    <div class="ui form">
+                      <div class="field">
+                        <label>Top</label>
+                        <div class="ui search">
+                        <input class="prompt" type="text" placeholder="Search champion">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ui form">
+                      <div class="field">
+                        <label>Jungle</label>
+                        <div class="ui search">
+                        <input class="prompt" type="text" placeholder="Search champion">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ui form">
+                      <div class="field">
+                        <label>Middle</label>
+                        <div class="ui search">
+                        <input class="prompt" type="text" placeholder="Search champion">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ui form">
+                      <div class="field">
+                        <label>Marksman</label>
+                        <div class="ui search">
+                        <input class="prompt" type="text" placeholder="Search champion">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ui form">
+                      <div class="field">
+                        <label>Support</label>
+                        <div class="ui search">
+                        <input class="prompt" type="text" placeholder="Search champion">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="ui fluid button" type="submit">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui fluid eight wide left aligned column">
+            <br>
+            <h3 class="ui header">Team Comp: Darius, Rek'Sai, Ahri, Vayne, Janna</h3>
+            <br>
+            <h3 class="ui header">Games found with specified team comp: 1230</h3>
+            <br>
+            <h3 class="ui header">Win rate of team comp: 68%</h3>
+            <br><br>
+
+        </div>
+    </div>
+</div>
+-->
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+<script>
+    $('.menu .item')
+            .tab();
+    $('.dropdown')
+            .dropdown();
+
+    var content = [
+        { title: 'Aatrox' },
+        { title: 'Ahri' },
+        { title: 'Akali' },
+        { title: 'Alistar' },
+        { title: 'Amumu' },
+        { title: 'Anivia' },
+        { title: 'Annie' },
+        { title: 'Ashe' },
+        { title: 'Azir' },
+        { title: 'Bard' },
+        { title: 'Blitzcrank' },
+        { title: 'Brand' },
+        { title: 'Braum' },
+        { title: 'Caitlyn' },
+        { title: 'Cassiopeia' }
+    ];
+
+    $('.ui.search')
+            .search({
+                source : content,
+                searchFullText: false,
+                searchDelay: 75
+            });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" rel="stylesheet">
+
+
+  <title>YO!</title>
+
+</head>
+
+<body>
+<div class="ui page grid">
+  <div class="ui centered column">
+    <br><br><br>
+
+    <div class="ui grid">
+      <div class ="row">
+        <h1 class="ui header"><pre class="ui header">  hello</pre></h1>
+      </div>
+      <div class="row">
+        <div class="two wide column">
+          <form class="ui form">
+            <select class="ui fluid dropdown">
+              <option value="TOP">Top</option>
+              <option value="JUNGLE">Jungle</option>
+              <option value="MID">Mid</option>
+              <option value="ADC">ADC</option>
+              <option value="SUP">Support</option>
+            </select>
+          </form>
+        </div>
+        <div class="four wide column">
+
+          <form class="ui form">
+            <div class="ui search">
+              <div class="ui fluid icon input">
+                <input class="prompt" type="text" placeholder="Search champion">
+                <i class="search icon"></i>
+              </div>
+              <div class="results"></div>
+            </div>
+          </form>
+
+
+        </div>
+        <div class="two wide column">
+          <button class="ui fluid button" type="submit">Search</button>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="eight wide column">
+          <h4 class="ui header">Darius (Top Lane) has the following counters:</h4>
+            <br>
+            <table class="ui celled striped table">
+              <thead>
+              <tr>
+                <th>Champion</th>
+                <th>Games Sampled</th>
+                <th>Win Rate Against</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Gnar</td>
+                <td>3045</td>
+                <td>78%</td>
+              </tr>
+              <tr>
+                <td>Irelia</td>
+                <td>2178</td>
+                <td>68%</td>
+              </tr>
+              <tr>
+                <td>Garen</td>
+                <td>6700</td>
+                <td>66%</td>
+              </tr>
+              </tbody>
+
+            </table>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+<script>
+    $('.dropdown')
+            .dropdown();
+
+    URL = 'https://na.api.pvp.net/api/lol/na/v1.2/champion?api_key=1b610544-8c97-4f40-adf6-37df27c37fb8';
+
+    var content = [
+        { title: 'Aatrox' },
+        { title: 'Ahri' },
+        { title: 'Akali' },
+        { title: 'Alistar' },
+        { title: 'Amumu' },
+        { title: 'Anivia' },
+        { title: 'Annie' },
+        { title: 'Ashe' },
+        { title: 'Azir' },
+        { title: 'Bard' },
+        { title: 'Blitzcrank' },
+        { title: 'Brand' },
+        { title: 'Braum' },
+        { title: 'Caitlyn' },
+        { title: 'Cassiopeia' }
+    ];
+
+    $('.ui.search')
+            .search({
+                source : content,
+                searchFullText: false,
+                searchDelay: 75
+            });
+
+</script>
+</body>
+</html>
