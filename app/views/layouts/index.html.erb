@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +37,14 @@
       <div class="ui inverted menu">
         <a class="item active">Home</a>
         <a class="item">Charts</a>
-        <a class="item">Counterpicks</a>
-        <a class="item">Champions</a>
+        <div class="item">
+          <%= link_to("Counterpicks",
+                      :action => 'counterPick') %>
+        </div>
+        <div class="item">
+          <%= link_to("Champions",
+                      :action => 'teamComp') %>
+        </div>
         <a class="item">Team Comps</a>
       </div>
     </div>
