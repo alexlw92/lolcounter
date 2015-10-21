@@ -1,31 +1,47 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
   <title>LOLCounter</title>
   <style>
-      body{background-image:url(http://na.leagueoflegends.com/sites/default/files/upload/environmentart-sru-04_1920.jpg);}
+      body{background-image:url(http://na.leagueoflegends.com/sites/default/files/upload/environmentart-sru-04_1920.jpg);
+          background-repeat: no-repeat;
+          background-attachment:fixed;
+          background-size:cover}
+
+      @media (max-width: 768px) {
+          .form-inline {
+              padding-top:1em;
+          }
+      }
+      @media (min-width: 768px) and (max-width: 979px){
+          .form-inline {
+              padding-top: 2.5em;
+          }
+      }
+      @media (min-width: 979px){
+          .form-inline {
+              padding-top: 3.7em;
+          }
+      }
   </style>
 </head>
 
 <body>
 <div class="container">
-  <div class="row" style="background-color:#212121;color:#FFFFFF">
-    <!--<div class="col-xs-6" style="font-size:50px;text-align:left;line-height:3.5em">
-        <span style="color:#00B2EF;">LOL</span><span style="color:#696D71;">Counter</span>
-    </div>-->
-    <div class="col-xs-12 text-right" style="padding-top:20px;">
-      <div class="text-left" style="font-size:50px;">
-        <span style="color:#00B2EF;">LOL</span><span style="color:#696D71;">Counter</span>
-      </div>
-      <form class="form-inline" style="padding:1em 0 1em 0">
+  <div class="row" style="background-color:#212121;color:#FFFFFF;">
+    <div class="col-xs-6 col-md-6">
+      <img src="/assets/logo.jpg" style="width:100%; max-height: 136px; max-width: 450px;">
+    </div>
+    <div class="col-xs-6 col-md-4 col-md-offset-1">
+      <form class="form-inline">
         <div class="form-group">
-          <div class="input-group-btn"><input type="text" class="form-control" name="sumName" placeholder="Summoner Name" style="border-radius:0">
-
-            <select class="form-control" style="border-radius:0">
+          <div class="input-group-btn">
+            <input type="text" class="form-control" name="sumName" placeholder="Summoner Name" style="border-radius:0;">
+            <select class="form-control" style="border-radius:0;">
               <option selected="" value="na">NA</option>
               <option value="euw">EUW</option>
               <option value="eune">EUNE</option>
@@ -37,25 +53,39 @@
               <option value="tr">TR</option>
               <option value="ru">RU</option>
             </select>
-            <button type="submit" class="btn" style="background-color:#696D71; border-radius:0">Search</button>
+            <button type="submit" class="btn" style="background-color:#696D71; border-radius:0;">Search</button>
           </div>
         </div>
       </form>
     </div>
   </div>
   <div class="row">
-    <nav class="navbar navbar-default">
-      <div class="subnav">
-        <ul class="nav nav-tabs">
+    <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px;border-style: solid;
+            border-color: #337ab7; border-bottom: white;">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuBar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a><!--You can put text here to show on the navbar-->
+      </div>
+      <div class="collapse navbar-collapse" id="menuBar">
+        <ul class="nav navbar-nav navbar-left">
           <li role="presentation" class="active"><a href="#">Home</a></li>
           <li role="presentation"><a href="#">Summoner</a></li>
           <li role="presentation"><a href="/layouts/champions">Champions</a></li>
           <li role="presentation"><a href="/layouts/counterPick">Counterpicks</a></li>
           <li role="presentation"><a href="#">Team Comps</a></li>
         </ul>
-        <span class="pull-right" style="padding-right:2em">Patch: 5.19 &nbsp;&nbsp;&nbsp; # Matches Analyzed: 3020200</span>
+        <p class="navbar-text pull-right">3,027,231 Matches</p>
       </div>
-      <div class="jumbotron" style="margin-bottom:0">
+
+    </nav>
+  </div>
+  <div class="row">
+    <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px; border-style: solid; border-color: #337ab7;">
+      <div class="mainSection" style="padding: 3em">
         <div class="row">
           <div class="col-xs-2">
             <h3>Highlights:</h3>
@@ -64,15 +94,22 @@
         <div class="row">
           <div class="col-xs-6">
             <a href="#" class="thumbnail">
-              <img src="http://p1.pichost.me/i/73/1978247.jpg"/>
+              <img src="http://p1.pichost.me/i/73/1978247.jpg">
               <p>Riven</p>
             </a>
           </div>
           <div class="col-xs-6">
             <a href="#" class="thumbnail">
-              <img src="http://media.alienwarearena.com/media/sejuani-the-winters-wrath-skin-League-of-Legends-Hd-Wallpaper-LoL-Champion-1920x1080.jpg"/>
+              <img src="http://media.alienwarearena.com/media/sejuani-the-winters-wrath-skin-League-of-Legends-Hd-Wallpaper-LoL-Champion-1920x1080.jpg">
               <p>Sejuani</p>
             </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Patch 5.20 Notes:</h3>
+            <p>Welcome to patch 5.20, the one where we continue our slower pace while making sure to buff Teemo. Preason and the ongoing World Championship are big topics for us as of late,
+            but not so much that we'd leave the rest of y'all non-pros out to dry..</p>
           </div>
         </div>
         <div class="row">
@@ -100,7 +137,7 @@
 </div>
 <div class="row" style="background-color: rgb(0,0,0);">
   <div class="col-xs-12" id="form">
-    <p class="muted credit" style="color:#337ab7; padding-top:5px; text-align:center;">LOLCounter Created for CS188 UCLA Fall 2015. Designed by Paul Kim, Daniel Yao, Alex Wang, Roland Zeng</p>
+    <p class="muted credit" style="color:#878A8D; padding-top:5px; text-align:center;">LOLCounter Created for CS188 UCLA Fall 2015. Designed by Paul Kim, Daniel Yao, Alex Wang, Roland Zeng</p>
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
