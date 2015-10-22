@@ -1,242 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" rel="stylesheet">
-
-
-  <title>YO!</title>
-
+    <%= render 'partials/headTag' %>
 </head>
 
 <body>
-<div class="ui page grid">
-  <div class="ui centered column">
-    <br><br><br>
+    <div class="container">
+      <%= render 'partials/headerContent' %>
+      <div class="row">
+        <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px;border-style: solid;
+                border-color: #337ab7; border-bottom: white;">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuBar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a><!--You can put text here to show on the navbar-->
+          </div>
+          <div class="collapse navbar-collapse" id="menuBar">
+            <ul class="nav navbar-nav navbar-left">
+              <li role="presentation"><a href="/layouts/index">Home</a></li>
+              <li role="presentation"><a href="/layouts/summoner">Summoner</a></li>
+              <li role="presentation"><a href="/layouts/champions">Champions</a></li>
+              <li role="presentation" class="active"><a href="/layouts/counterPick">Counterpicks</a></li>
+              <li role="presentation"><a href="/layouts/teamComp">Team Comps</a></li>
+            </ul>
+            <p class="navbar-text pull-right">3,027,231 Matches</p>
+          </div>
 
-    <div class="ui grid">
-      <div class ="row">
-        <h1 class="ui header"><pre class="ui header">  hello</pre></h1>
+        </nav>
       </div>
       <div class="row">
-        <div class="two wide column">
-          <form class="ui form">
-            <select class="ui fluid dropdown">
-              <option value="TOP">Top</option>
-              <option value="JUNGLE">Jungle</option>
-              <option value="MID">Mid</option>
-              <option value="ADC">ADC</option>
-              <option value="SUP">Support</option>
-            </select>
-          </form>
-        </div>
-        <div class="four wide column">
-
-          <form class="ui form">
-            <div class="ui search">
-              <div class="ui fluid icon input">
-                <input class="prompt" type="text" placeholder="Search champion">
-                <i class="search icon"></i>
-              </div>
-              <div class="results"></div>
-            </div>
-          </form>
-
-
-        </div>
-        <div class="two wide column">
-          <button class="ui fluid button" type="submit">Search</button>
-
-        </div>
+        <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px; border-style: solid; border-color: #337ab7;">
+          <div class="mainSection" style="padding: 3em;">
+            <%= render 'partials/counterpickContent' %>
+          </div>
+        </nav>
       </div>
-      <div class="row">
-        <div class="eight wide column">
-          <h4 class="ui header">Darius (Top Lane) has the following counters:</h4>
-            <br>
-            <table class="ui celled striped table">
-              <thead>
-              <tr>
-                <th>Champion</th>
-                <th>Games Sampled</th>
-                <th>Win Rate Against</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>Gnar</td>
-                <td>3045</td>
-                <td>78%</td>
-              </tr>
-              <tr>
-                <td>Irelia</td>
-                <td>2178</td>
-                <td>68%</td>
-              </tr>
-              <tr>
-                <td>Garen</td>
-                <td>6700</td>
-                <td>66%</td>
-              </tr>
-              </tbody>
-
-            </table>
-
-        </div>
-      </div>
-
     </div>
-  </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
-<script>
-    $('.dropdown')
-            .dropdown();
+    <%= render 'partials/footerContent' %>
 
-    URL = 'https://na.api.pvp.net/api/lol/na/v1.2/champion?api_key=1b610544-8c97-4f40-adf6-37df27c37fb8';
-
-    var content = [
-        {  title:  'Aatrox'  },
-        {  title:  'Ahri'  },
-        {  title:  'Akali'  },
-        {  title:  'Alistar'  },
-        {  title:  'Amumu'  },
-        {  title:  'Anivia'  },
-        {  title:  'Annie'  },
-        {  title:  'Ashe'  },
-        {  title:  'Azir'  },
-        {  title:  'Bard'  },
-        {  title:  'Blitzcrank'  },
-        {  title:  'Brand'  },
-        {  title:  'Braum'  },
-        {  title:  'Caitlyn'  },
-        {  title:  'Cassiopeia'  },
-        {  title:  'Cho\'Gath'  },
-        {  title:  'Corki'  },
-        {  title:  'Darius'  },
-        {  title:  'Diana'  },
-        {  title:  'Dr. Mundo'  },
-        {  title:  'Draven'  },
-        {  title:  'Ekko'  },
-        {  title:  'Elise'  },
-        {  title:  'Evelynn'  },
-        {  title:  'Ezreal'  },
-        {  title:  'Fiddlesticks'  },
-        {  title:  'Fiora'  },
-        {  title:  'Fizz'  },
-        {  title:  'Galio'  },
-        {  title:  'Gangplank'  },
-        {  title:  'Garen'  },
-        {  title:  'Gnar'  },
-        {  title:  'Gragas'  },
-        {  title:  'Graves'  },
-        {  title:  'Hecarim'  },
-        {  title:  'Heimerdinger'  },
-        {  title:  'Irelia'  },
-        {  title:  'Janna'  },
-        {  title:  'Jarvan IV'  },
-        {  title:  'Jax'  },
-        {  title:  'Jayce'  },
-        {  title:  'Jinx'  },
-        {  title:  'Kalista'  },
-        {  title:  'Karma'  },
-        {  title:  'Karthus'  },
-        {  title:  'Kassadin'  },
-        {  title:  'Katarina'  },
-        {  title:  'Kayle'  },
-        {  title:  'Kennen'  },
-        {  title:  'Kha\'Zix'  },
-        {  title:  'Kindred'  },
-        {  title:  'Kog\'Maw'  },
-        {  title:  'LeBlanc'  },
-        {  title:  'Lee Sin'  },
-        {  title:  'Leona'  },
-        {  title:  'Lissandra'  },
-        {  title:  'Lucian'  },
-        {  title:  'Lulu'  },
-        {  title:  'Lux'  },
-        {  title:  'Malphite'  },
-        {  title:  'Malzahar'  },
-        {  title:  'Maokai'  },
-        {  title:  'Master Yi'  },
-        {  title:  'Miss Fortune'  },
-        {  title:  'Mordekaiser'  },
-        {  title:  'Morgana'  },
-        {  title:  'Nami'  },
-        {  title:  'Nasus'  },
-        {  title:  'Nautilus'  },
-        {  title:  'Nidalee'  },
-        {  title:  'Nocturne'  },
-        {  title:  'Nunu'  },
-        {  title:  'Olaf'  },
-        {  title:  'Orianna'  },
-        {  title:  'Pantheon'  },
-        {  title:  'Poppy'  },
-        {  title:  'Quinn'  },
-        {  title:  'Rammus'  },
-        {  title:  'Rek\'Sai'  },
-        {  title:  'Renekton'  },
-        {  title:  'Rengar'  },
-        {  title:  'Riven'  },
-        {  title:  'Rumble'  },
-        {  title:  'Ryze'  },
-        {  title:  'Sejuani'  },
-        {  title:  'Shaco'  },
-        {  title:  'Shen'  },
-        {  title:  'Shyvana'  },
-        {  title:  'Singed'  },
-        {  title:  'Sion'  },
-        {  title:  'Sivir'  },
-        {  title:  'Skarner'  },
-        {  title:  'Sona'  },
-        {  title:  'Soraka'  },
-        {  title:  'Swain'  },
-        {  title:  'Syndra'  },
-        {  title:  'Tahm Kench'  },
-        {  title:  'Talon'  },
-        {  title:  'Taric'  },
-        {  title:  'Teemo'  },
-        {  title:  'Thresh'  },
-        {  title:  'Tristana'  },
-        {  title:  'Trundle'  },
-        {  title:  'Tryndamere'  },
-        {  title:  'Twisted Fate'  },
-        {  title:  'Twitch'  },
-        {  title:  'Udyr'  },
-        {  title:  'Urgot'  },
-        {  title:  'Varus'  },
-        {  title:  'Vayne'  },
-        {  title:  'Veigar'  },
-        {  title:  'Vel\'Koz'  },
-        {  title:  'Vi'  },
-        {  title:  'Viktor'  },
-        {  title:  'Vladimir'  },
-        {  title:  'Volibear'  },
-        {  title:  'Warwick'  },
-        {  title:  'Wukong'  },
-        {  title:  'Xerath'  },
-        {  title:  'Xin Zhao'  },
-        {  title:  'Yasuo'  },
-        {  title:  'Yorick'  },
-        {  title:  'Zac'  },
-        {  title:  'Zed'  },
-        {  title:  'Ziggs'  },
-        {  title:  'Zilean'  },
-        {  title:  'Zyra'  }
-
-    ];
-
-    $('.ui.search')
-            .search({
-                source : content,
-                searchFullText: false,
-                searchDelay: 75
-            });
-
-</script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

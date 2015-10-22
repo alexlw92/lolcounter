@@ -47,6 +47,11 @@ ActiveRecord::Schema.define(version: 20150930235037) do
     t.string "rank", limit: 12
   end
 
+  create_table "riot_api_models", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "games", "champions", column: "LOSE_ADC", name: "lose_adc_fk"
   add_foreign_key "games", "champions", column: "LOSE_JG", name: "lose_jg_fk"
   add_foreign_key "games", "champions", column: "LOSE_MID", name: "lose_mid_fk"
