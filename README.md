@@ -1,5 +1,8 @@
 #LoL Counter
 
+###Status
+[![Build Status](https://travis-ci.org/scalableinternetservices/lolcounter.svg?branch=master)](https://travis-ci.org/scalableinternetservices/lolcounter)
+
 ###Description
 To be added...
 
