@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930235037) do
+ActiveRecord::Schema.define(version: 1) do
 
   create_table "champions", force: :cascade do |t|
     t.string "name", limit: 20
@@ -45,11 +45,6 @@ ActiveRecord::Schema.define(version: 20150930235037) do
 
   create_table "ranks", force: :cascade do |t|
     t.string "rank", limit: 12
-  end
-
-  create_table "riot_api_models", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "games", "champions", column: "LOSE_ADC", name: "lose_adc_fk"

@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'layouts#index'
 
+   get 'summoner' => 'layouts#summoner'
+   get 'champions' => 'layouts#champions'
+   get 'teamcomp' => 'layouts#teamComp'
+   get 'counterpicks' => 'layouts#counterPick'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,15 +1,23 @@
 class LayoutsController < ActionController::Base
-  def
-    index
+  def index
     @results = RiotApiModel.retrieve_results("snvigoss")
     @blah = "blah"
   end
-  def
-    counterPick
+
+  def summonerLookup
+
+  end
+
+  def champions
+
+  end
+
+  def counterPicks
     @blah = "counterPick"
   end
-  def
-    teamComp
+
+
+  def teamComp
     @blah = "teamComp"
   end
 end
