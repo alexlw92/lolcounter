@@ -51,4 +51,4 @@ production:
   <<: *default
   database: newdatabase
   username: root
-  password: <%= ENV['UNTITLED1_DATABASE_PASSWORD'] %>
+  password: gtg565

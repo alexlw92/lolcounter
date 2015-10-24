@@ -1,6 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<%= favicon_link_tag 'favicon.png' %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 <title>LOLCounter</title>
 <style>
@@ -8,7 +9,8 @@
         position: relative;
         min-height: 100%;
     }
-    body{background-image:url(http://na.leagueoflegends.com/sites/default/files/upload/environmentart-sru-04_1920.jpg);
+    body{
+        background-image:url(<%=asset_path('background.png') %>);
         background-repeat: no-repeat;
         background-attachment:fixed;
         background-size:cover;
