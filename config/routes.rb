@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'teamcomp/index'
-
   # match ':controller(/:action(/:id))', :via => :get
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -10,7 +8,7 @@ Rails.application.routes.draw do
    root 'layouts#index'
 
    get '/summoner' => 'summoner#index'
-   get '/summoner/:id' => 'summoner#show', as: :sumID
+   get '/summoner/:id' => 'summoner#show'
 
    get '/champions' => 'champions#index'
    get '/champions/:id' => 'champions#show', as: :champion

@@ -5,5 +5,8 @@ class SummonerController < ApplicationController
 
   def show
     @blah2="blah2"
+    input_summoner_id = params[:id]
+    @output_id = input_summoner_id
+
   end
 end
