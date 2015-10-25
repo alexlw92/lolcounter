@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: sqlpass #gtg565
+  password: gtg565
   host: localhost
 
 development:

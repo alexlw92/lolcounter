@@ -21,12 +21,12 @@
       <div class="collapse navbar-collapse" id="menuBar">
         <ul class="nav navbar-nav navbar-left">
           <li role="presentation"><%=link_to "Home", "/" %></li>
-          <li role="presentation" class="active"><%=link_to "Summoner", "summoner" %></li>
+          <li role="presentation"><%=link_to "Summoner", "summoner" %></li>
           <li role="presentation"><%=link_to "Champions", "champions" %></li>
           <li role="presentation"><%=link_to "Counterpicks", "counterpicks" %></li>
-          <li role="presentation"><%=link_to "Team Comps", "teamcomp" %></li>
+          <li role="presentation" class="active"><%=link_to "Team Comps", "teamcomp" %></li>
         </ul>
-        <p class="navbar-text pull-right">3,027,231 Matches</p>
+        <p class="navbar-text pull-right"><%= render 'partials/numGames' %> Matches</p>
       </div>
 
     </nav>
@@ -34,7 +34,7 @@
   <div class="row">
     <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px; border-style: solid; border-color: #337ab7;">
       <div class="mainSection" style="padding: 3em;">
-        <%= render 'partials/summonerContent' %>
+        <%= render 'partials/teamcompContent' %>
       </div>
     </nav>
   </div>

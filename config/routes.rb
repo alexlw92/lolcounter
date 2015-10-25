@@ -1,17 +1,24 @@
 Rails.application.routes.draw do
+
+  get 'teamcomp/index'
+
   # match ':controller(/:action(/:id))', :via => :get
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    root 'layouts#index'
+
+   get '/summoner' => 'summoner#index'
+   get '/summoner/:id' => 'summoner#show', as: :sumID
+
    get '/champions' => 'champions#index'
    get '/champions/:id' => 'champions#show', as: :champion
 
-   #get 'summoner' => 'layouts#summoner'
-   #get 'champions' => 'layouts#champions'
-   #get 'teamcomp' => 'layouts#teamComp'
-   #get 'counterpicks' => 'layouts#counterPick'
+   get 'counterpicks' => 'counterpicks#index'
+
+   get '/teamcomp' => 'teamcomp#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
