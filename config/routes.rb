@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'layouts#index'
    get '/champions' => 'champions#index'
+   get '/champions/:id' => 'champions#show', as: :champion
 
    #get 'summoner' => 'layouts#summoner'
    #get 'champions' => 'layouts#champions'

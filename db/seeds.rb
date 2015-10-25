@@ -21,3 +21,14 @@ g1 = Game.create(RANK: "1",WIN_TOP: "1",WIN_JG: "2", WIN_MID: "3", WIN_ADC: "4",
 g2 = Game.create(RANK: "1",WIN_TOP: "1",WIN_JG: "2", WIN_MID: "3", WIN_ADC: "4", WIN_SUP: "5",LOSE_TOP: "6",LOSE_JG: "7", LOSE_MID: "8", LOSE_ADC: "9", LOSE_SUP: "10")
 g3 = Game.create(RANK: "1",WIN_TOP: "1",WIN_JG: "2", WIN_MID: "3", WIN_ADC: "4", WIN_SUP: "5",LOSE_TOP: "6",LOSE_JG: "7", LOSE_MID: "8", LOSE_ADC: "9", LOSE_SUP: "10")
 g4 = Game.create(RANK: "1",WIN_TOP: "6",WIN_JG: "7", WIN_MID: "8", WIN_ADC: "9", WIN_SUP: "10",LOSE_TOP: "1",LOSE_JG: "2", LOSE_MID: "3", LOSE_ADC: "4", LOSE_SUP: "5")
+
+c1.games << [g1, g2, g3, g4]
+c2.games << [g1, g2, g3, g4]
+c3.games << [g1, g2, g3, g4]
+c4.games << [g1, g2, g3, g4]
+c5.games << [g1, g2, g3, g4]
+c6.games << [g1, g2, g3, g4]
+c7.games << [g1, g2, g3, g4]
+c8.games << [g1, g2, g3, g4]
+c9.games << [g1, g2, g3, g4]
+c10.games << [g1, g2, g3, g4]

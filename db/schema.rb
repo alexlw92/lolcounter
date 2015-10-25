@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20151025034445) do
 
   create_table "champions", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.integer  "game",       limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -39,8 +38,8 @@ ActiveRecord::Schema.define(version: 20151025034445) do
   create_table "parts", force: :cascade do |t|
     t.integer  "champion_id", limit: 4
     t.integer  "game_id",     limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "parts", ["champion_id"], name: "index_parts_on_champion_id", using: :btree

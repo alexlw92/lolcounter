@@ -34,13 +34,18 @@
   <div class="row">
     <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px; border-style: solid; border-color: #337ab7;">
       <div class="mainSection" style="padding: 3em;">
-        <%= render 'partials/championsContent' %>
-        <% @champions.each do |champion| %>
-            <div class="champion">
-              <h3><%= champion.name %></h3>
-              <%= link_to "Winrate", champion_path(champion) %>
-            </div>
-        <% end %>
+        <h1> <%= @champion.name %> </h1>
+        <h3> total games: <%= @total_games %> </h3>
+        <h3> top wins: <%= @top_win %> </h3>
+        <h3> top losses: <%= @top_loss %> </h3>
+        <h3> jungle wins: <%= @jungle_win %> </h3>
+        <h3> jungle losses: <%= @jungle_loss %> </h3>
+        <h3> mid wins: <%= @mid_win %> </h3>
+        <h3> mid losses: <%= @mid_loss %> </h3>
+        <h3> adc wins: <%= @adc_win %> </h3>
+        <h3> adc losses: <%= @adc_loss %> </h3>
+        <h3> support wins: <%= @support_win %> </h3>
+        <h3> support losses: <%= @support_loss %> </h3>
       </div>
     </nav>
   </div>
