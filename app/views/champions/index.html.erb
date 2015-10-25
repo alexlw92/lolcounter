@@ -35,9 +35,16 @@
     <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px; border-style: solid; border-color: #337ab7;">
       <div class="mainSection" style="padding: 3em;">
         <%= render 'partials/championsContent' %>
+        <% @champions.each do |champion| %>
+            <div class="champion">
+              <h3><%= champion.name %></h3>
+              <!--%= link_to "Learn more", movie_path(movie) %-->
+            </div>
+        <% end %>
       </div>
     </nav>
   </div>
+
 </div>
 
 <%= render 'partials/footerContent' %>
