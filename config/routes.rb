@@ -8,7 +8,10 @@ Rails.application.routes.draw do
    root 'layouts#index'
 
    get '/summoner' => 'summoner#index'
-   get '/summoner/:id' => 'summoner#show'
+
+   post '/summoner/' => 'summoner#search'
+
+   get '/summoner/:id' => 'summoner#show', id: /\d+/
 
    get '/champions' => 'champions#index'
    get '/champions/:id' => 'champions#show', as: :champion

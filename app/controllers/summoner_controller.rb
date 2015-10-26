@@ -9,4 +9,10 @@ class SummonerController < ApplicationController
     @output_id = input_summoner_id
 
   end
+
+  def search
+
+    @output_summoner_name = params[:title]
+  end
+
 end

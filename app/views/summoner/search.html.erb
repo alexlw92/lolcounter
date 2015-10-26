@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <%= render 'partials/headTag' %>
+</head>
+
+<body>
+<div class="container">
+  <%= render 'partials/headerContent' %>
+  <div class="row">
+    <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px;border-style: solid;
+            border-color: #337ab7; border-bottom: white;">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuBar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a><!--You can put text here to show on the navbar-->
+      </div>
+      <div class="collapse navbar-collapse" id="menuBar">
+        <ul class="nav navbar-nav navbar-left">
+          <li role="presentation"><%=link_to "Home", "/" %></li>
+          <li role="presentation" class="active"><%=link_to "Summoner", "/summoner" %></li>
+          <li role="presentation"><%=link_to "Champions", "/champions" %></li>
+          <li role="presentation"><%=link_to "Counterpicks", "/counterpicks" %></li>
+          <li role="presentation"><%=link_to "Team Comps", "/teamcomp" %></li>
+        </ul>
+        <p class="navbar-text pull-right"><%= render 'partials/numGames' %> Matches</p>
+      </div>
+
+    </nav>
+  </div>
+  <div class="row">
+    <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px; border-style: solid; border-color: #337ab7;">
+      <div class="mainSection" style="padding: 3em;">
+        <%= render 'partials/summonerSearch' %>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<%= render 'partials/footerContent' %>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
