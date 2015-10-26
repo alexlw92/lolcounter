@@ -12,7 +12,14 @@ class SummonerController < ApplicationController
 
   def search
 
-    @output_summoner_name = params[:title]
+    input_name = params[:input_name]
+    input_region = params[:input_region]
+
+
+    @output_summoner_name = input_name
+    @output_summoner_region = input_region
+
+
   end
 
 end

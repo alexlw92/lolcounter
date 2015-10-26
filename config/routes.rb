@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
    get '/summoner' => 'summoner#index'
 
-   post '/summoner/' => 'summoner#search'
+   post '/summoner' => 'summoner#search'
 
    get '/summoner/:id' => 'summoner#show', id: /\d+/
 

@@ -3,11 +3,12 @@
     <%=image_tag("logo.jpg", width:'100%', alt:'banner', class:'banner') %>
   </div>
   <div class="col-xs-6 col-md-4 col-md-offset-1">
-    <form class="form-inline">
+    <form class="form-inline" action="/summoner" accept-charset="UTF-8" method="post">
       <div class="form-group">
         <div class="input-group-btn">
-          <input type="text" class="form-control" name="sumName" placeholder="Summoner Name" style="border-radius:0;">
-          <select class="form-control" style="border-radius:0;">
+          <input type="hidden" name="authenticity_token" value="+Pq7HPZyjvWh8ZPEe54W1Xmh9hCjM2c7uI6aEAdmaX5FIC6MZjVu5ZYca+/BCAll/ZJyuZmGIEEh71vR4Pt68w==">
+          <input type="text" name="input_name" id="input_name" class="form-control" placeholder="Summoner Name" style="border-radius:0;">
+          <select name="input_region" id="input_region" class="form-control" style="border-radius:0;">
             <option selected="" value="na">NA</option>
             <option value="euw">EUW</option>
             <option value="eune">EUNE</option>
@@ -19,7 +20,7 @@
             <option value="tr">TR</option>
             <option value="ru">RU</option>
           </select>
-          <button type="submit" class="btn" style="background-color:#696D71; border-radius:0;">Search</button>
+          <button type="submit" name="commit" value="Search" class="btn" style="background-color:#696D71; border-radius:0;">Search</button>
         </div>
       </div>
     </form>
