@@ -1,17 +1,26 @@
 <div class="row">
-  <div class="col-xs-2">
-    <h3>Summoner</h3>
+  <div class="col-xs-12">
+    <h3>Individual Summoner Info</h3>
   </div>
 
 </div>
 
 <div class="row">
   <div class="col-xs-12">
+
+    <img src=<%= "#{@output_summoner_icon}" %>
+    <hr>
     <h3>Summoner name: <%= "#{@output_summoner_name}" %></h3>
     <h3>Summoner region: <%= "#{@output_summoner_region}" %></h3>
     <hr>
-
-
+    <h3>Summoner rank: <%= "#{@output_summoner_tier}" %> <%= "#{@output_summoner_divison}" %> <%= "#{@output_summoner_lp}" %> LP</h3>
+    <hr>
+    <h3>Top 3 most-played champions</h3>
+    <h3>...</h3>
+    <h3>Top 3 highest-winrate champions</h3>
+    <h3>...</h3>
+    <h3>Top 3 Highest-KDA champions</h3>
+    <h3>...</h3>
 
   </div>
 
