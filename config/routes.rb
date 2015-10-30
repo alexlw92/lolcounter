@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
    post '/teamcomp' => 'teamcomp#search'
 
-   get '/teamcomp/:id' => 'teamcomp#index'
+   get '/teamcomp/show' => 'teamcomp#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
