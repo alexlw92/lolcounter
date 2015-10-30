@@ -1,5 +1,5 @@
 class LayoutsController < ActionController::Base
   def index
-    @blah = "blah"
+    @games = "blah"
   end
 end

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
    get 'counterpicks' => 'counterpicks#index'
 
    get '/teamcomp' => 'teamcomp#index'
-
+   get '/teamcomp/show' => 'teamcomp@show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
