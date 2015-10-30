@@ -1,50 +1,53 @@
 <div class="row">
   <div class="col-xs-3">
-    <div class="row">
-      <div class="col-xs-12" style="max-width:200px;">
-        <div class="form-group">
-          <label>Top</label>
-          <input id="champSearch" type="text" class="form-control" placeholder="Search Champion">
+    <form action="/teamcomp" accept-charset="UTF-8" method="POST">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div class="row">
+          <div class="col-xs-12" style="max-width:200px;">
+            <div class="form-group">
+              <label>Top</label>
+              <input name="top" id="top" type="text" class="form-control" placeholder="Search Champion">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12" style="max-width:200px;">
-        <div class="form-group">
-          <label>Jungle</label>
-          <input id="champSearch" type="text" class="form-control" placeholder="Search Champion">
+        <div class="row">
+          <div class="col-xs-12" style="max-width:200px;">
+            <div class="form-group">
+              <label>Jungle</label>
+              <input name="jungle" id="jungle" type="text" class="form-control" placeholder="Search Champion">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12" style="max-width:200px;">
-        <div class="form-group">
-          <label>Mid</label>
-          <input id="champSearch" type="text" class="form-control" placeholder="Search Champion">
+        <div class="row">
+          <div class="col-xs-12" style="max-width:200px;">
+            <div class="form-group">
+              <label>Mid</label>
+              <input name="mid" id="mid" type="text" class="form-control" placeholder="Search Champion">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12" style="max-width:200px;">
-        <div class="form-group">
-          <label>ADC</label>
-          <input id="champSearch" type="text" class="form-control" placeholder="Search Champion">
+        <div class="row">
+          <div class="col-xs-12" style="max-width:200px;">
+            <div class="form-group">
+              <label>ADC</label>
+              <input name="adc" id="adc" type="text" class="form-control" placeholder="Search Champion">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12" style="max-width:200px;">
-        <div class="form-group">
-          <label>Support</label>
-          <input id="champSearch" type="text" class="form-control" placeholder="Search Champion">
+        <div class="row">
+          <div class="col-xs-12" style="max-width:200px;">
+            <div class="form-group">
+              <label>Support</label>
+              <input name="support" id="support" type="text" class="form-control" placeholder="Search Champion">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <button type="submit" class="btn">Search</button>
-      </div>
-    </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" value="search" class="btn">Search</button>
+          </div>
+        </div>
+    </form>
 
   </div>
   <div class="col-xs-9">
