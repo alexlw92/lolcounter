@@ -35,6 +35,9 @@
     <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px; border-style: solid; border-color: #337ab7;">
       <div class="mainSection" style="padding: 3em;">
         <%= render 'partials/summonerContent' %>
+        <% if @displayInfo == true %>
+            <%= render 'partials/summonerSearch' %>
+        <% end %>
       </div>
     </nav>
   </div>

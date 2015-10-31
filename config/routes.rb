@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
    get '/summoner' => 'summoner#index'
 
-   post '/summoner' => 'summoner#search'
+   # post '/summoner' => 'summoner#search'
 
    get '/summoner/:id' => 'summoner#show', id: /\d+/
 
@@ -20,9 +20,9 @@ Rails.application.routes.draw do
 
    get '/teamcomp' => 'teamcomp#index'
 
-   post '/teamcomp' => 'teamcomp#search'
+   # post '/teamcomp' => 'teamcomp#show'
 
-   get '/teamcomp/show' => 'teamcomp#show'
+   # get '/teamcomp/show' => 'teamcomp#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

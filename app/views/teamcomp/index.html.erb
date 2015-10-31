@@ -31,11 +31,12 @@
 
     </nav>
   </div>
-  <h3><%=link_to "Show", "/teamcomp/show" %></h3>
   <div class="row">
     <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px; border-style: solid; border-color: #337ab7;">
       <div class="mainSection" style="padding: 3em;">
         <%= render 'partials/teamcompContent' %>
+        <h3 style="color:white"> Test wins: <%= @wins %></h3>
+        <h3 style="color:white"> Test losses: <%= @losses %></h3>
       </div>
     </nav>
   </div>
