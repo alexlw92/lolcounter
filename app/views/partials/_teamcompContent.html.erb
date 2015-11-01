@@ -50,15 +50,23 @@
     </form>
 
   </div>
-  <div class="col-xs-9">
-    <br>
-    <h3>Team Comp: Darius, Rek'Sai, Ahri, Vayne, Janna</h3>
-    <br>
-    <h3>Games found with specified team comp: 1230</h3>
-    <br>
-    <h3>Win rate of team comp: 68%</h3>
-    <br><br>
+  <% if @valid %>
+      <div class="col-xs-9">
+        <br>
+        <h3>Team Comp: <%=@top_name%>,<%=@jungle_name%>,<%=@mid_name%>,<%=@adc_name%>,<%=@support_name%></h3>
+        <br>
+        <h3>Games found with specified team comp: <%=@num_games%></h3>
+        <br>
+        <h3>wins: <%=@wins%></h3>
+        <br>
+        <h3>losses: <%=@losses%></h3>
+        <br>
+        <h3>Win rate of team comp: <%=@win_rate * 100%>%</h3>
+        <br>
+      </div>
+  <% else %>
+    <h3> invalid champion name(s)</h3>
+  <%end%>
 
-  </div>
 
 </div>
