@@ -1,20 +1,19 @@
 <div class="row">
 
-  <div class="col-xs-3"><!-- ToDo: resizing the screen messes up here-->
-    <form class="form-inline">
+  <div class="col-xs-12"><!-- ToDo: resizing the screen messes up here-->
+    <form class="form-inline" action="" accept-charset="UTF-8" method="GET" >
       <div class="form-group">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <div class="input-group-btn">
-          <select class="form-control" style="border-radius:0;">
-            <option value="TOP">Top</option>
-            <option value="JUNGLE">Jungle</option>
-            <option value="MID">Mid</option>
-            <option value="ADC">ADC</option>
-            <option value="SUP">Support</option>
+          <select name="lane" class="form-control" style="border-radius:0;">
+            <option name="top" value="top">Top</option>
+            <option name="jungle" value="jungle">Jungle</option>
+            <option name="mid" value="mid">Mid</option>
+            <option name="adc" value="adc">ADC</option>
+            <option name="sup" value="sup">Support</option>
           </select>
-
-          <input id="champSearch" type="text" class="form-control" placeholder="Search Champion" style="border-radius:0;">
-
-          <button type="submit" class="btn">Search</button>
+          <input name="champSearch" id="champSearch" type="text" class="form-control" placeholder="Search Champion" style="border-radius:0;">
+          <button type="submit" value="search" class="btn">Search</button>
         </div>
       </div>
     </form>
