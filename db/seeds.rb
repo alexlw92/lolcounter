@@ -37,3 +37,9 @@ c7.games << [g1, g2, g3, g4]
 c8.games << [g1, g2, g3, g4]
 c9.games << [g1, g2, g3, g4]
 c10.games << [g1, g2, g3, g4]
+
+champs = RiotApiModel.get_champions
+champs["data"].each{|champ|
+  c = Champion.find_or_create_by(id:champ[1]["id"])
+  c.update(name:champ[1]["name"] )
+}
