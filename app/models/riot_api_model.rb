@@ -1,7 +1,6 @@
 class RiotApiModel < ActiveRecord::Base
   require 'rest_client'
 
-  
 
 
   def self.summoner_lookup(sum_name,sum_region)
@@ -16,5 +15,14 @@ class RiotApiModel < ActiveRecord::Base
     return JSON.parse(result)
 
   end
+
+  def self.get_champions()
+    url = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=3a5fa3f0-c714-4a0a-9dab-955dcdc04bca"
+    result = RestClient.get(url, :accept => 'json')
+    return JSON.parse(result)
+
+
+  end
+
 
 end
