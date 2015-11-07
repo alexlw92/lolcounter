@@ -14,6 +14,7 @@ Rails.application.routes.draw do
    get '/summoner/:id' => 'summoner#show', id: /\d+/
 
    get '/champions' => 'champions#index'
+   get '/champions/json' => 'champions#retrieveAllChampStats'
    get '/champions/:id' => 'champions#show', as: :champion
 
    get 'counterpicks' => 'counterpicks#index'

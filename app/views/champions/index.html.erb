@@ -2,6 +2,8 @@
 <html>
 <head>
   <%= render 'partials/headTag' %>
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.css">
 </head>
 
 <body>
@@ -35,12 +37,21 @@
     <nav class="navbar navbar-default" style="margin-bottom: 0; border-radius: 0px; border-style: solid; border-color: #337ab7;">
       <div class="mainSection">
         <%= render 'partials/championsContent' %>
-        <% @champions.each do |champion| %>
-            <div class="champion">
-              <h3><%= champion.name %></h3>
-              <%= link_to "Winrate", champion_path(champion) %>
-            </div>
-        <% end %>
+        <div class="table-responsive">
+            <table id="ChampionsTable" class="table table-condensed table-striped table-bordered table-hover">
+              <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Top Winrate</th>
+                    <th>Mid Winrate</th>
+                    <th>Jungle Winrate</th>
+                    <th>ADC Winrate</th>
+                    <th>Support Winrate</th>
+                    <th># Games</th>
+                  </tr>
+              </thead>
+            </table>
+          </div>
       </div>
     </nav>
   </div>
@@ -51,5 +62,24 @@
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.js"></script>
+<script>
+    $('#ChampionsTable').DataTable( {
+        "ajax": {
+            "url": "/champions/json",
+            "dataSrc": ""
+        },
+        "columns": [
+            {"data": "champName"},
+            {"data": "topWinRate"},
+            {"data": "midWinRate"},
+            {"data": "jungWinRate"},
+            {"data": "adcWinRate"},
+            {"data": "supWinRate"},
+            {"data": "totalGames"}
+        ]
+    });
+</script>
 </body>
 </html>
