@@ -1,8 +1,9 @@
 language: ruby
 rvm:
   - 2.1.5
+sudo: required
 before_script:
   - mysql -e 'create database newdatabase;'
 script:
-  - bin/rake db:migrate RAILS_ENV=test
+  - bin/rake db:migrate
   - bin/rake db:seed
