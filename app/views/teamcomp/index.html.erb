@@ -73,7 +73,39 @@
         'Zyra'
 
     ];
-    $( "#champSearch" ).autocomplete({
+    $( "#champSearch01" ).autocomplete({
+        source: function( request, response ) {
+            var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+            response( $.grep( content, function( item ){
+                return matcher.test( item );
+            }) );
+        }
+    });
+    $( "#champSearch02" ).autocomplete({
+        source: function( request, response ) {
+            var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+            response( $.grep( content, function( item ){
+                return matcher.test( item );
+            }) );
+        }
+    });
+    $( "#champSearch03" ).autocomplete({
+        source: function( request, response ) {
+            var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+            response( $.grep( content, function( item ){
+                return matcher.test( item );
+            }) );
+        }
+    });
+    $( "#champSearch04" ).autocomplete({
+        source: function( request, response ) {
+            var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+            response( $.grep( content, function( item ){
+                return matcher.test( item );
+            }) );
+        }
+    });
+    $( "#champSearch05" ).autocomplete({
         source: function( request, response ) {
             var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
             response( $.grep( content, function( item ){
