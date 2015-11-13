@@ -17,14 +17,13 @@ class TeamcompController < ApplicationController
     @adc_name = adc_champ
     @support_name = support_champ
 
-
+    #puts(top_champ.titleize.gsub!(/'/, ' '))
 
     @top_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + 'Teemo' + '.png'
     @jungle_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
     @mid_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
     @adc_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
     @support_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
-
 
 
     @valid = false
@@ -46,5 +45,8 @@ class TeamcompController < ApplicationController
       end
       @valid = true
     end
+
+
+
   end
 end

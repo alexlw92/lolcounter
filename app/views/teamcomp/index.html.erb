@@ -75,6 +75,7 @@
 
     ];
     $( "#champSearch01" ).autocomplete({
+        delay: 10,
         source: function( request, response ) {
             var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
             response( $.grep( content, function( item ){
@@ -83,6 +84,7 @@
         }
     });
     $( "#champSearch02" ).autocomplete({
+        delay: 10,
         source: function( request, response ) {
             var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
             response( $.grep( content, function( item ){
@@ -91,6 +93,7 @@
         }
     });
     $( "#champSearch03" ).autocomplete({
+        delay: 10,
         source: function( request, response ) {
             var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
             response( $.grep( content, function( item ){
@@ -99,6 +102,7 @@
         }
     });
     $( "#champSearch04" ).autocomplete({
+        delay: 10,
         source: function( request, response ) {
             var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
             response( $.grep( content, function( item ){
@@ -107,6 +111,7 @@
         }
     });
     $( "#champSearch05" ).autocomplete({
+        delay: 10,
         source: function( request, response ) {
             var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
             response( $.grep( content, function( item ){
