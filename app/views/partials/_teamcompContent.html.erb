@@ -52,17 +52,20 @@
 
   <% if @valid %>
       <div class="col-xs-9">
-        <br>
-        <h3>Team Comp: <%=@top_name%>,<%=@jungle_name%>,<%=@mid_name%>,<%=@adc_name%>,<%=@support_name%></h3>
-        <br>
-        <h3>Games found with specified team comp: <%=@num_games%></h3>
-        <br>
-        <h3>wins: <%=@wins%></h3>
-        <br>
-        <h3>losses: <%=@losses%></h3>
-        <br>
-        <h3>Win rate of team comp: <%=@win_rate * 100%>%</h3>
-        <br>
+        <div style="width:100%; text-align:center;">
+            <img src=<%= "#{@top_icon}" %> height="50" width="50" display:inline-block;>
+            <img src=<%= "#{@jungle_icon}" %> height="50" width="50" display:inline-block;>
+            <img src=<%= "#{@mid_icon}" %> height="50" width="50" display:inline-block;>
+            <img src=<%= "#{@adc_icon}" %> height="50" width="50" display:inline-block;>
+            <img src=<%= "#{@support_icon}" %> height="50" width="50" display:inline-block;>
+        </div>
+
+        <h4 style="text-align: center;">Total games found: <%=@num_games%></h4>
+
+        <div id="donut" data-donut=<%=@win_rate * 100%>></div>
+
+
+
       </div>
   <% else %>
     <h3> invalid champion name(s)</h3>

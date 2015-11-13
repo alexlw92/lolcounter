@@ -17,6 +17,16 @@ class TeamcompController < ApplicationController
     @adc_name = adc_champ
     @support_name = support_champ
 
+
+
+    @top_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + 'Teemo' + '.png'
+    @jungle_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
+    @mid_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
+    @adc_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
+    @support_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
+
+
+
     @valid = false
     @top = @champion.where(name:@top_name).pluck(:id)
     @jungle = @champion.where(name:@jungle_name).pluck(:id)
