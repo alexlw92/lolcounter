@@ -17,14 +17,33 @@ class TeamcompController < ApplicationController
     @adc_name = adc_champ
     @support_name = support_champ
 
-    #puts(top_champ.titleize.gsub!(/'/, ' '))
+    if(top_champ != nil)
+      top_url_name = top_champ.gsub(/\s|"|'/, '')
+    end
 
-    @top_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + 'Teemo' + '.png'
-    @jungle_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
-    @mid_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
-    @adc_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
-    @support_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/Teemo.png'
+    if(jungle_champ != nil)
+      jungle_url_name = jungle_champ.gsub(/\s|"|'/, '')
+    end
 
+    if(mid_champ != nil)
+      mid_url_name = mid_champ.gsub(/\s|"|'/, '')
+    end
+
+    if(adc_champ != nil)
+      adc_url_name = adc_champ.gsub(/\s|"|'/, '')
+    end
+
+    if(support_champ != nil)
+      support_url_name = support_champ.gsub(/\s|"|'/, '')
+    end
+
+
+    #    puts("hello")
+    @top_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + top_url_name + '.png'
+    @jungle_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + jungle_url_name + '.png'
+    @mid_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + mid_url_name + '.png'
+    @adc_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + adc_url_name + '.png'
+    @support_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + support_url_name + '.png'
 
     @valid = false
     @top = @champion.where(name:@top_name).pluck(:id)
