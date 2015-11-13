@@ -72,6 +72,7 @@
 
         ];
         $( "#champSearch" ).autocomplete({
+            delay: 10,
             source: function( request, response ) {
                 var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
                 response( $.grep( content, function( item ){
