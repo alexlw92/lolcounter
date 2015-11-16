@@ -17,35 +17,26 @@ class TeamcompController < ApplicationController
     @adc_name = adc_champ
     @support_name = support_champ
 
-    if(top_champ != nil)
-      top_url_name = top_champ.gsub(/\s|"|'/, '')
-    end
-
-    if(jungle_champ != nil)
-      jungle_url_name = jungle_champ.gsub(/\s|"|'/, '')
-    end
-
-    if(mid_champ != nil)
-      mid_url_name = mid_champ.gsub(/\s|"|'/, '')
-    end
-
-    if(adc_champ != nil)
-      adc_url_name = adc_champ.gsub(/\s|"|'/, '')
-    end
-
-    if(support_champ != nil)
-      support_url_name = support_champ.gsub(/\s|"|'/, '')
-    end
-
-
     #    puts("hello")
-    @top_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + top_url_name + '.png'
-    @jungle_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + jungle_url_name + '.png'
-    @mid_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + mid_url_name + '.png'
-    @adc_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + adc_url_name + '.png'
-    @support_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + support_url_name + '.png'
+    if(top_champ != nil && jungle_champ != nil && mid_champ != nil && adc_champ != nil && support_champ != nil)
+      top_url_name = top_champ.gsub(/\s|"|'/, '');
+      jungle_url_name = jungle_champ.gsub(/\s|"|'/, '');
+      mid_url_name = mid_champ.gsub(/\s|"|'/, '');
+      adc_url_name = adc_champ.gsub(/\s|"|'/, '');
+      support_url_name = support_champ.gsub(/\s|"|'/, '');
+      @top_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + top_url_name + '.png'
+      @jungle_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + jungle_url_name + '.png'
+      @mid_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + mid_url_name + '.png'
+      @adc_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + adc_url_name + '.png'
+      @support_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + support_url_name + '.png'
+    else
+      @valid = 'invalid';
+    end
 
-    @valid = false
+    if (top_champ == nil && jungle_champ == nil && mid_champ == nil && adc_champ == nil && support_champ == nil)
+      @valid = 'empty';
+    end
+
     @top = @champion.where(name:@top_name).pluck(:id)
     @jungle = @champion.where(name:@jungle_name).pluck(:id)
     @mid = @champion.where(name:@mid_name).pluck(:id)
@@ -62,7 +53,7 @@ class TeamcompController < ApplicationController
       else
         @win_rate = 0
       end
-      @valid = true
+      @valid = 'valid'
     end
 
 
