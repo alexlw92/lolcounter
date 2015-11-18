@@ -1,29 +1,81 @@
-<div class="row">
-  <div class="col-xs-12">
-    <h3>Individual Summoner Info</h3>
-  </div>
 
-</div>
+<% if @valid_sum_name == 'valid' %>
+    <div class="row">
+      <div class="col-xs-2" style="padding-top:13px">
+        <img src=<%= "#{@output_summoner_icon}" %> height="145" width="145">
 
-<div class="row">
-  <div class="col-xs-12">
+      </div>
+      <div class="col-xs-10" style="padding: 0 !important;margin: 0 !important;">
+        <h1><%= "#{@output_summoner_name}" %></h1>
+        <h3><%= "#{@output_summoner_region}" %></h3>
+        <h3><%= "#{@output_summoner_rank}" %></h3>
 
-    <img src=<%= "#{@output_summoner_icon}" %>
-    <hr>
-    <h3>Summoner name: <%= "#{@output_summoner_name}" %></h3>
-    <h3>Summoner region: <%= "#{@output_summoner_region}" %></h3>
-    <hr>
-    <h3>Summoner rank: <%= "#{@output_summoner_tier}" %> <%= "#{@output_summoner_divison}" %> <%= "#{@output_summoner_lp}" %> LP</h3>
-    <hr>
-    <h3>Top 3 most-played champions</h3>
-    <h3>...</h3>
-    <h3>Top 3 highest-winrate champions</h3>
-    <h3>...</h3>
-    <h3>Top 3 Highest-KDA champions</h3>
-    <h3>...</h3>
+      </div>
+    </div>
+<% else %>
+    <div class="row">
+      <div class="col-xs-12" style="padding-top:13px">
+        <h2>Invalid summoner name!</h2>
 
-  </div>
+      </div>
 
+    </div>
 
+<%end%>
 
-</div>
+<% if @valid_rank == 'valid' %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="container" style="padding-left: 0">
+          <div class="row">
+            <div class="col-md-6">
+              <br>
+              <h4>Player's Top 3 Ranked Solo 5v5 Champions for Season 5</h4>
+
+              <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                      <th colspan="2" style="text-align: center;">Champion</th>
+                      <th style="text-align: center;"># Games</th>
+                      <th style="text-align: center;">Win Rate </th>
+                      <th style="text-align: center;">K / D / A</th>
+                    </tr>
+                </thead>
+
+                <colgroup>
+                  <col class="col-xs-2">
+                  <col class="col-xs-2">
+                  <col class="col-xs-2">
+                  <col class="col-xs-2">
+                  <col class="col-xs-4">
+                </colgroup>
+                <tbody>
+                <tr>
+                  <td><img src=<%= "#{@output_top1_icon}" %> height="75" width="75"></td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top1_champ}" %></td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top1_games}" %></td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top1_wr}" %>%</td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top1_k}" %> <b>/</b> <%= "#{@output_top1_d}" %> <b>/</b> <%= "#{@output_top1_a}" %></td>
+                </tr>
+                <tr>
+                  <td><img src=<%= "#{@output_top2_icon}" %> height="75" width="75"></td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top2_champ}" %></td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top2_games}" %></td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top2_wr}"%>%</td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top2_k}" %> <b>/</b> <%= "#{@output_top2_d}" %> <b>/</b> <%= "#{@output_top2_a}" %></td>
+                </tr>
+                <tr>
+                  <td><img src=<%= "#{@output_top3_icon}" %> height="75" width="75"></td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top3_champ}" %></td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top3_games}" %></td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top3_wr}"%>%</td>
+                  <td style="text-align: center;vertical-align: middle;"><%= "#{@output_top3_k}" %> <b>/</b> <%= "#{@output_top3_d}" %> <b>/</b> <%= "#{@output_top3_a}" %></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<%end%>
