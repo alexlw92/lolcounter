@@ -37,6 +37,18 @@ class SummonerController < ApplicationController
       @output_summoner_tier = summoner_tier
       @output_summoner_divison = summoner_division
       @output_summoner_lp = summoner_lp
+
+      result3 = RiotApiModel.get_ranked_summary(summoner_id)
+      arr = result3['champions']
+
+      #Sorts arr in increasing order
+      #Last element is total stats
+      #2nd last is most played
+      #3rd last is 2nd most played
+      #4th last is the 3rd most played
+      
+      arr.sort! {|a,b| a['stats']['totalSessionsPlayed'] <=> b['stats']['totalSessionsPlayed'] }
+        p arr[0]['stats']['totalSessionsPlayed']
     end
   end
 

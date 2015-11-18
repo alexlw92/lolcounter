@@ -20,9 +20,12 @@ class RiotApiModel < ActiveRecord::Base
     url = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=3a5fa3f0-c714-4a0a-9dab-955dcdc04bca"
     result = RestClient.get(url, :accept => 'json')
     return JSON.parse(result)
-
-
   end
 
+  def self.get_ranked_summary(sum_id)
+    url = "https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/#{sum_id}/ranked?season=SEASON2015&api_key=3a5fa3f0-c714-4a0a-9dab-955dcdc04bca"
+    result = RestClient.get(url, :accept => 'json')
+    return JSON.parse(result)
+  end
 
 end
