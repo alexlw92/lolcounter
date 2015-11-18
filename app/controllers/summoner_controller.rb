@@ -46,7 +46,7 @@ class SummonerController < ApplicationController
       #2nd last is most played
       #3rd last is 2nd most played
       #4th last is the 3rd most played
-      
+
       arr.sort! {|a,b| a['stats']['totalSessionsPlayed'] <=> b['stats']['totalSessionsPlayed'] }
         p arr[0]['stats']['totalSessionsPlayed']
     end
