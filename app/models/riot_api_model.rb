@@ -41,8 +41,16 @@ class RiotApiModel < ActiveRecord::Base
 
   def self.get_ranked_summary(sum_id)
     url = "https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/#{sum_id}/ranked?season=SEASON2015&api_key=80f2a95e-b7f8-44d0-894b-b02201b98dc0"
-    result = RestClient.get(url, :accept => 'json')
-    return JSON.parse(result)
+    RestClient.get(url){ |response, request, result, &block|
+      case response.code
+        when 200
+          return JSON.parse(response)
+        else
+          return response.code
+      end
+    }
+    #result = RestClient.get(url, :accept => 'json')
+    #return JSON.parse(result)
   end
 
   def self.get_champion_by_id(champ_id)
