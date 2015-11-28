@@ -5,6 +5,7 @@ class CounterpicksController < ApplicationController
 
     if(lane == nil && championSearched == nil) #Haven't queried anything
       @valid = 4
+      return
     end
     @lane = lane
     @output_lane = lane.to_s.capitalize
@@ -64,6 +65,5 @@ class CounterpicksController < ApplicationController
 
       @valid = 1
     end
-
   end
 end
