@@ -70,9 +70,12 @@
         </div>
       </div>
     </div>
-
-
-
 <% elsif @valid == 0 %>
-    <h3> invalid champion name(s)</h3>
+    <h3>Invalid champion name(s)!</h3>
+<% elsif @valid == 2 %>
+    <h3>Not enough games found!</h3>
+<% elsif @valid == 3 %>
+    <h3>Invalid lane searched!</h3>
+<% elsif @valid == 4 %>
+    <h3>Search for a champion and lane to find its top 3 counter picks!</h3>
 <% end %>
