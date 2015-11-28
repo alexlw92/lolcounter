@@ -1,6 +1,6 @@
 class SummonerController < ApplicationController
   def index
-
+    expires_in 10.minutes, :public => true
     input_name = params[:input_name]
     input_region = params[:input_region]
     @displayInfo = false
@@ -105,11 +105,7 @@ class SummonerController < ApplicationController
                 @output_top1_a = ((arr[arr.length-2]['stats']['totalAssists'] +0.0) / top1_num).round(1)
                 @output_top2_a = ((arr[arr.length-3]['stats']['totalAssists'] +0.0) / top2_num).round(1)
                 @output_top3_a = ((arr[arr.length-4]['stats']['totalAssists'] +0.0) / top3_num).round(1)
-
-                expires_in 10.minutes, :public => true
               end
-
-
             end
           end
         end

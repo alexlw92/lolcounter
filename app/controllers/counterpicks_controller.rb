@@ -1,5 +1,6 @@
 class CounterpicksController < ApplicationController
   def index
+    expires_in 10.minutes, :public => true
     lane = params[:lane] #Lane the user searched for
     championSearched = params[:champSearch] #Champion user wishes to find counters for
 
