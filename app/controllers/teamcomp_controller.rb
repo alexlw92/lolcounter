@@ -25,6 +25,21 @@ class TeamcompController < ApplicationController
       mid_url_name = mid_champ.gsub(/\s|"|'/, '');
       adc_url_name = adc_champ.gsub(/\s|"|'/, '');
       support_url_name = support_champ.gsub(/\s|"|'/, '');
+      if(top_url_name == 'Wukong')
+          top_url_name = 'MonkeyKing'
+      end
+      if(jungle_url_name == 'Wukong')
+        jungle_url_name = 'MonkeyKing'
+      end
+      if(mid_url_name == 'Wukong')
+        mid_url_name = 'MonkeyKing'
+      end
+      if(adc_url_name == 'Wukong')
+        adc_url_name = 'MonkeyKing'
+      end
+      if(support_url_name == 'Wukong')
+        support_url_name = 'MonkeyKing'
+      end
       @top_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + top_url_name + '.png'
       @jungle_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + jungle_url_name + '.png'
       @mid_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + mid_url_name + '.png'
