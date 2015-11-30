@@ -3,12 +3,15 @@ require "active_record"
 require "json"
 require "net/http"
 require "uri"
+require "rack/throttle"
 
+apikeyalex = "3a5fa3f0-c714-4a0a-9dab-955dcdc04bca"
 apikey = "1b610544-8c97-4f40-adf6-37df27c37fb8"
+
 
 ActiveRecord::Base.establish_connection(
     :adapter  => 'mysql2',
-    :database => 'newdatabase',
+    :database => 'lolcount',
     :username => 'root',
     :password => 'root',
     :host     => 'localhost')
@@ -39,15 +42,17 @@ def callAPI(uri_orig)
     puts "RATE LIMIT"
     puts response.code
     time = response['retry-after']
+    if response['X-Rate-Limit-Type'] == 'user'
+      abort("ACTUAL RATE LIMIT")
+    end
     if time != nil
       sleep(Integer(time))
     else
-      sleep(2)
+      sleep(1)
     end
     return callAPI(uri_orig)
   end
 end
-
 
 s = Summoners.order('created_at ASC')
 
@@ -57,7 +62,11 @@ s.each{|ss|
   puts "getting summoner #{summoner}"
   result = callAPI("https://na.api.pvp.net/api/lol/na/v2.2/matchlist/by-summoner/#{summoner}?rankedQueues=RANKED_SOLO_5x5&api_key=#{apikey}")
   sleep(0.01)
-  matches = result["matches"].first(10)
+  begin
+    matches = result["matches"].first(10)
+  rescue
+    next
+  end
 
 
   matches.each{ |match|
@@ -70,7 +79,7 @@ s.each{|ss|
 
         summId = matchinfo["participantIdentities"][i]["player"]["summonerId"]
         sum = Summoners.find_or_create_by(id: summId)
-        puts "added summoner #{summId}"
+       # puts "added summoner #{summId}"
 
         time = matchinfo["matchCreation"]
         dt = Time.at(time/1000)
@@ -119,7 +128,7 @@ s.each{|ss|
 
     puts "added match #{matchid}"
 
-    sleep(1)
+    #sleep(1)
 
 
   }
