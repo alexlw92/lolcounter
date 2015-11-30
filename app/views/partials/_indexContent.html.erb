@@ -1,45 +1,199 @@
 <div class="row">
-    <div class="col-xs-2">
-      <h3>Highlights:</h3>
+    <div class="col-xs-12">
+      <h3>Newly Released Champions:</h3>
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-6">
+    <div class="col-xs-6" data-toggle="modal" data-target="#Illaoi">
       <a href="#" class="thumbnail">
-        <%=image_tag('riven.png')%>
-        <p>Riven</p>
+        <%=image_tag('illaoi.png')%>
+        <p>Illaoi - The Kraken Priestess</p>
       </a>
     </div>
-    <div class="col-xs-6">
+  <!-- Modal -->
+  <div id="Illaoi" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: #222222; color: #22AFE6;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="modal-title">Illaoi - The Kraken Priestess</h1>
+        </div>
+        <div class="modal-body">
+            <p>Most champions arm themselves with swords or guns or magic or whatever, but Illaoi's bringing a freakin god
+            to the Rift. One of the new breed of juggernauts, she's a slow but impactful solo laner in any game, with tentacles
+            that offer huge zone control once they worm their way into the game. And while she lacks traditional gap closers
+            to start fights, she can pull the spirits from distant squishies and destroy them, rendering yet another vessel
+            for Illaoi's god, Nagakabouros.</p>
+          <div id="illaoiPlayer">
+          </div>
+            <h2 style="color: orange">Abilities</h2>
+            <h3 style="color: orange"><%=image_tag('illaoi-p.png')%> PASSIVE: PROPHET OF AN ELDER GOD</h3>
+            <p>Illaoi and theVessels she creates spawn Tentacles on nearby impassible terrain. Tentacles swing at Spirits,
+              Vessels, and victims of Illaoi's Harsh lesson. Tentacles deal physical damage to enemies hit.</p>
+
+            <h3 style="color: orange"><%=image_tag('illaoi-q.png')%> Q: TENTACLE SMASH</h3>
+            <p>Illaoi is healed for a percentage of her missing health whenever a Tentacle damages an enemy champion.
+              When activated, Illaoi smashes down a Tentacle that deals physical damage.</p>
+            <p><b>Passive: </b>Illaoi is healed for 5% of her missing health whenever a Tentacle damages a champion.</p>
+            <p><b>Active: </b>Illaoi summons a tentacle that slams down in a target direction, dealing 10 x level(+ 1.2/
+            1.3/ 1.4/ 1.5/ 1.6 per attack damage) physical damage to all enemies in a line.</p>
+
+            <h3 style="color: orange"><%=image_tag('illaoi-w.png')%> W: HARSH LESSON</h3>
+            <p>Illaoi leaps to her target, dealing physical damage and causing nearby Tentacles to also swing at the target.</p>
+            <p>For her next basic attack, Illaoi leaps to her target dealing 15/35/55/75/95 (+110% Attack Damage) physical
+              damage. When she strikes, nearby Tentacles will also swing at the target.</p>
+
+            <h3 style="color: orange"><%=image_tag('illaoi-e.png')%> E: TEST OF SPIRIT</h3>
+            <p>Illaoi rips the Spirit from a foe's body, forcing it to stand before her. Spirits echo a percentage of the
+              damage they take to the original target. If killed, or if the target gets too far from the Spirit, the
+              target will become a Vessel and begin spawning Tentacles.</p>
+            <p>Illaoi rips the spirit from a foe's body, forcing it to stand before her, so she can teach them a lesson.
+              Illaoi calls on the power of her god to pull the Spirit from an enemy champion for 10 seconds. The Spirit
+              can be attacked by Illaoi and her allies and echoes 25/30/35/40/45% (+[0]%) of the damage it takes to the
+              target.If the Spirit dies or the target leaves its range, the target becomes a Vessel. Vessels spawn a
+              Tentacle every 10 seconds for 1 minute and have their movement speed slowed by 80%, decaying over 2 seconds.
+              Tentacles swing at Spirits and Vessels dealing 0 (+0) physical damage.</p>
+
+            <h3 style="color: orange"><%=image_tag('illaoi-r.png')%> R: LEAP OF FAITH</h3>
+            <p>Illaoi smashes her idol into the ground, dealing physical damage to nearby enemies. A Tentacle spawns for
+              each enemy champion hit.</p>
+            <p>Illaoi smashes her idol into the ground, dealing 150/250/350 (+50% bonus Attack Damage) physical damage
+              to nearby enemies.A Tentacle spawns for each enemy champion hit and, for the next 8 seconds, Tentacles
+              swing 50% faster, are untargetable, and Harsh Lesson has a 2 second cooldown.'There are kind and gentle
+              gods. Mine isn't one of those.'</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="col-xs-6" data-toggle="modal" data-target="#Kindred">
       <a href="#" class="thumbnail">
-        <%=image_tag('sejuani.png')%>
-        <p>Sejuani</p>
+        <%=image_tag('kindred.png')%>
+        <p>Kindred - The Eternal Hunters</p>
       </a>
+    </div>
+  <!-- Modal -->
+  <div id="Kindred" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: #222222; color: #22AFE6;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="modal-title">Kindred - The Eternal Hunters</h1>
+        </div>
+        <div class="modal-body">
+          <p>Separate, but never parted, Kindred represents the twin essences of death. Lamb's bow
+          offers a swift release from the mortal realm for those who accept their fate. Wolf hunts
+          down those who run from their end, delivering violent finality within his crushing jaws.
+          Though interpretations of Kindred's nature vary across Runeterra, every mortal must choose
+          the true face of their death.</p>
+          <div id="kindredPlayer">
+          </div>
+          <h2 style="color: orange">Abilities</h2>
+          <h3 style="color: orange"><%=image_tag('kindred_p.png')%> PASSIVE: MARK OF THE KINDRED</h3>
+          <p>Kindred can mark targets to Hunt. Successfully completing a Hunt permanently empowers Kindred's basic attacks.</p>
+
+          <h3 style="color: orange"><%=image_tag('kindred-q.png')%> Q: DANCE OF ARROWS</h3>
+          <p>Kindred tumbles and shoots up to three arrows at nearby targets.</p>
+          <p>Lamb vaults, firing up to 3 arrows at nearby enemies, dealing 60/90/120/150/180 (+0) physical damage.Casting
+            Wolf's Frenzy or vaulting inside of its effect reduces the cooldown of this spell to 2 seconds.</p>
+
+          <h3 style="color: orange"><%=image_tag('kindred-w.png')%> W: WOLF'S FRENZY</h3>
+          <p><b>Passive: </b>As Kindred move they build stacks of Hunter's Vigor, up to a maximum of 100. At full stacks
+            Lamb's next basic attack drains 0 health from the target.</p>
+          <p><b>Active: </b>Wolf claims a territory, attacking nearby enemies inside it for 8 seconds. Lamb can direct
+            him to targets by attacking them. If Lamb leaves Wolf's territory he will cease attacking and join her.Wolf's
+            attacks deal physical damage equal to 25/30/35/40/45 (+0) plus 40% of the damage from Mark of the Kindred.</p>
+
+          <h3 style="color: orange"><%=image_tag('kindred-e.png')%> E: MOUNTING DREAD</h3>
+          <p>Lamb fires a carefully placed shot, slowing the target. If Lamb attacks the target two more times, her third
+            attack instead directs Wolf to pounce on the enemy, savaging them for massive damage.</p>
+          <p>Cripple an enemy, slowing their movement speed by 70% for 1 second.After Lamb attacks the target twice, her
+            third attack instead directs Wolf to pounce on the enemy, dealing massive physical damage.Wolf deals physical
+            damage equal to 80/110/140/170/200 (+0) +5% of the target's maximum health.</p>
+
+          <h3 style="color: orange"><%=image_tag('kindred-r.png')%> R: LAMB'S RESPITE</h3>
+          <p>Lamb grants all living things inside a zone a respite from death. Until the effect ends, nothing can die.
+            At the end, units are healed.</p>
+          <p>Lamb blesses the ground under a friendly champion for 4 seconds, creating an area in which no living things,
+            ally or enemy, can die. Upon reaching 10% Health, units become immune to further damage or healing.When the
+            blessing ends all living things inside heal for 200/250/300.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a href="http://na.leagueoflegends.com/en/news/champions-skins/free-rotation"><h3>Weekly Champion Rotation:</h3></a>
+    <div><%=image_tag('weeklyRotation.png', width:'60%')%></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a href="http://na.leagueoflegends.com/en/news/game-updates/patch/patch-523-notes"><h3>Patch 5.23 Notes:</h3></a>
+    <p>11/25/2015
+      Greetings, Summoners.
+      Welcome to patch 5.23, the one after preason. Unlike some of our pre-preason patches before this, we're being more
+      bold when it comes to balance - surgical tuning works once we have a deep understanding of the game ecosystem, but
+      since preseason has introduced so much change, we want to make broad, inpactful changes to get a firm grasp on what's
+      going on...
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a href="http://na.leagueoflegends.com/en/news/game-updates/patch/patch-522-notes"><h3>Patch 5.22 Notes:</h3></a>
+    <p>11/17/2015
+      What a time. You've read the sites, you've seen the devblogs, you've heard the announcements. Preseason is finally upon us.
+      So what's on the docket for us this year? Well, to be frank, a little bit of everything. We're looking to make every game of
+      League feels unique, and that means going the distance to make sure your decisions matter. From the champions you pick,
+      the masteries you choose, and the way you express yourself with Items, 2016's all about meaningful choices...
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a href="http://na.leagueoflegends.com/en/news/game-updates/patch/patch-521-notes>"><h3>Patch 5.21 Notes:</h3></a>
+    <p>10/29/2015
+      Welcome to patch 5.21, the one that's finally old enough to drink. You've heard it a lot by now, but we're nearing the end of our smaller patch cycles as
+      Preseason work nears its conclusion - busting the doors wide open on the things you thought you knew about League of Legends.
+      But first, Riven nerfs...
+    </p>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+      <a href="http://na.leagueoflegends.com/en/news/game-updates/patch/patch-520-notes"><h3>Patch 5.20 Notes:</h3></a>
+      <p>10/14/2015 Welcome to patch 5.20, the one where we continue our slower pace while making sure to buff Teemo. Preason and the ongoing World Championship are big topics for us as of late,
+        but not so much that we'd leave the rest of y'all non-pros out to dry...
+      </p>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-      <h3>Patch 5.20 Notes:</h3>
-      <p>Welcome to patch 5.20, the one where we continue our slower pace while making sure to buff Teemo. Preason and the ongoing World Championship are big topics for us as of late,
-        but not so much that we'd leave the rest of y'all non-pros out to dry..</p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-      <h3>Patch 5.19 Notes:</h3>
+      <a href="http://na.leagueoflegends.com/en/news/game-updates/patch/patch-519-notes"> <h3>Patch 5.19 Notes:</h3></a>
       <p>10/1/2015
         Ranked Teams
         OTHERWISE WHAT'S THE POINT: Fixed a bug where ranked teams weren't gaining LP
-        THERE'S A PUN IN HERE SOMEWHERE: Fixed a visual bug where progress toward ranked team ward skins appeared to be reset. Your points were not lost...</p>
+        THERE'S A PUN IN HERE SOMEWHERE: Fixed a visual bug where progress toward ranked team ward skins appeared to be reset. Your points were not lost...
+      </p>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-      <h3>Patch 5.18 Notes:</h3>
+      <a href="http://na.leagueoflegends.com/en/news/game-updates/patch/patch-518-notes"><h3>Patch 5.18 Notes:</h3></a>
       <p>9/21/2015
         Jarvan IV
         THE POWER OF IMAGINATION Fixed a visual bug where Jarvan's Passive - Martial Cadence empowered autoattacks were sometimes not playing an animation
         Spectator Mode
-        LET'S CALL IT AN OPTICAL ILLUSION Fixed a longstanding visual bug that caused certain VFX (ex. Relic Shield charges, Banshee's Veil bubble, blue/red buff runes) to visually persist even after the effect expired...</p>
+        LET'S CALL IT AN OPTICAL ILLUSION Fixed a longstanding visual bug that caused certain VFX (ex. Relic Shield charges, Banshee's Veil bubble, blue/red buff runes) to visually persist even after the effect expired...
+      </p>
     </div>
 </div>
