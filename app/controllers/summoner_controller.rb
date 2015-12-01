@@ -1,6 +1,6 @@
 class SummonerController < ApplicationController
   def index
-    expires_in 10.minutes, :public => true
+    #expires_in 10.minutes, :public => true
     input_name = params[:input_name]
     input_region = params[:input_region]
     @displayInfo = false
