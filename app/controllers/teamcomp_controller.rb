@@ -65,14 +65,14 @@ class TeamcompController < ApplicationController
       @num_games = 0.0
       @num_games = @wins + @losses
       if(@num_games > 0)
-        @win_rate = @wins/@num_games
+        @win_rate = @wins/(@num_games+0.0)
+        if(@win_rate == 1.0)
+          @win_rate = 1
+        end
       else
         @win_rate = 0
       end
       @valid = 'valid'
     end
-
-
-
   end
 end
