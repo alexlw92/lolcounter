@@ -6,13 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-counter1 = Counter.create(champion_id: "1",
-                          first_counter_name: "Anivia",wins_against_first:"1",losses_against_first:"3",
-                          second_counter_name: "Annie",wins_against_second:"2",losses_against_second:"2",
-                          third_counter_name: "Alistar",wins_against_third:"3",losses_against_third:"1")
 
 champs = RiotApiModel.get_champions
 champs["data"].each{|champ|
   c = Champion.find_or_create_by(id:champ[1]["id"])
   c.update(name:champ[1]["name"] )
+}
+
+
+Champion.all.each {|champ|
+  RiotApiModel.get_counters(champ.id, "TOP")
+  RiotApiModel.get_counters(champ.id, "JG")
+  RiotApiModel.get_counters(champ.id, "MID")
+  RiotApiModel.get_counters(champ.id, "ADC")
+  RiotApiModel.get_counters(champ.id, "SUP")
 }

@@ -59,4 +59,51 @@ class RiotApiModel < ActiveRecord::Base
     return JSON.parse(result)
   end
 
+  def self.get_counters(champ_id, role)
+    sql = "SELECT
+    L.lose_#{role} as opponent,
+    IFNULL(L.c, 0) as wins,
+    IFNULL(W.c, 0) as losses,
+    IFNULL(L.c, 0)+IFNULL(W.c, 0) as games,
+    IFNULL(L.c, 0)/(IFNULL(L.c, 0)+IFNULL(W.c, 0)) as winrate
+FROM
+    (SELECT
+        lose_#{role}, COUNT(1) c
+    FROM
+        games
+    WHERE
+        win_#{role} = #{champ_id}
+    GROUP BY lose_#{role}) L
+        LEFT JOIN
+    (SELECT
+        win_#{role}, COUNT(1) c
+    FROM
+        games
+    WHERE
+        lose_#{role} = #{champ_id}
+    GROUP BY win_#{role}) W ON L.lose_#{role} = W.win_#{role}
+    WHERE IFNULL(L.c, 0)+IFNULL(W.c, 0) > 10
+    ORDER BY winrate ASC
+    LIMIT 3"
+    results = ActiveRecord::Base.connection.execute(sql).as_json
+    counter = Counter.find_or_create_by(champion_id: champ_id, role: role)
+    it = 1
+    results.each{ |c|
+      if(it==1)
+        counter.update(first_counter_name: Champion.find_by_id(results[0][0]).name)
+        counter.update(wins_against_first: results[0][1])
+        counter.update(losses_against_first: results[0][2])
+      elsif(it==2)
+        counter.update(second_counter_name: Champion.find_by_id(results[1][0]).name)
+        counter.update(wins_against_second: results[1][1])
+        counter.update(losses_against_second: results[1][2])
+      elsif(it==3)
+        counter.update(third_counter_name: Champion.find_by_id(results[2][0]).name)
+        counter.update(wins_against_third: results[2][1])
+        counter.update(losses_against_third: results[2][2])
+
+      end
+      it=it+1
+    }
+  end
 end

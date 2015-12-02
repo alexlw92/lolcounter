@@ -23,7 +23,7 @@ class CounterpicksController < ApplicationController
     end
 
     if(!@champion_id.blank?) #Checks if the searched champion is a valid champion
-      @counters = @counters.where(id:@champion_id)
+      @counters = @counters.where(id:@champion_id, role: @lane)
 
       first_counter = @counters.pluck(:first_counter_name)
       if(first_counter.blank?) #We found no entries for 1st counter against the queried champion
@@ -31,6 +31,10 @@ class CounterpicksController < ApplicationController
         return
       end
       @first_counter_name = first_counter[0]
+      if(@first_counter_name == nil)
+        @valid = 2
+        return
+      end
       @first_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + @first_counter_name.to_s + '.png'
 
       wins_against_first = @counters.pluck(:wins_against_first)
@@ -44,6 +48,10 @@ class CounterpicksController < ApplicationController
         return
       end
       @second_counter_name = second_counter[0]
+      if(@second_counter_name == nil)
+        @valid = 1
+        return
+      end
       @second_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + @second_counter_name.to_s + '.png'
 
       wins_against_second = @counters.pluck(:wins_against_second)
@@ -57,6 +65,10 @@ class CounterpicksController < ApplicationController
         return
       end
       @third_counter_name = third_counter[0]
+      if(@third_counter_name == nil)
+        @valid = 1
+        return
+      end
       @third_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + @third_counter_name.to_s + '.png'
 
       wins_against_third = @counters.pluck(:wins_against_third)
