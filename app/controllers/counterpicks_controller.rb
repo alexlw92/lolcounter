@@ -23,7 +23,7 @@ class CounterpicksController < ApplicationController
     end
 
     if(!@champion_id.blank?) #Checks if the searched champion is a valid champion
-      @counters = @counters.where(id:@champion_id, role: @lane)
+      @counters = @counters.where(champion_id:@champion_id, role: @lane)
 
       first_counter = @counters.pluck(:first_counter_name)
       if(first_counter.blank?) #We found no entries for 1st counter against the queried champion
