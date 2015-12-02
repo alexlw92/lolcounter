@@ -1,5 +1,5 @@
 class ChampionsController < ApplicationController
-  #@@champsArray = Array.new; #Array used to keep track of all champion stats, so we don't query every time (kind of like caching)
+  @@champsArray = Array.new; #Array used to keep track of all champion stats, so we don't query every time (kind of like caching)
 
   def index #This function just returns a list of all champions
     #expires_in 10.minutes, :public => true
@@ -44,8 +44,7 @@ class ChampionsController < ApplicationController
     #WE CAN ALSO PRE-COMPUTE THESE RESULTS UPON DEPLOYMENT SO THE USER DOESN'T HAVE DECREASED EXPERIENCE
     #This should be run at deployment and have the results cached.
 
-    #if(@@champsArray.length == 0) #If we haven't queried the champsArray once yet.
-      @@champsArray = Array.new
+    if(@@champsArray.length == 0) #If we haven't queried the champsArray once yet.
       Champion.all.each do |champion|
         # all_games = Game.where('WIN_TOP = ? OR LOSE_TOP = ? OR WIN_JG = ? OR LOSE_JG = ? OR WIN_MID = ?
         #                         OR LOSE_MID = ? OR WIN_ADC = ? OR LOSE_ADC = ? OR WIN_SUP = ? OR LOSE_SUP = ?',
@@ -55,25 +54,25 @@ class ChampionsController < ApplicationController
 
         top_win = Game.where(WIN_TOP:champion.id).count;
         top_loss = Game.where(LOSE_TOP:champion.id).count;
-        topWinRate = number_to_percentage(top_win.to_f/(top_win+top_loss));
+        topWinRate = number_to_percentage(top_win.to_f/(top_win+top_loss)) + ' | ' + (top_win+top_loss).to_s + ' played'
         jungle_win = Game.where(WIN_JG:champion.id).count;
         jungle_loss = Game.where(LOSE_JG:champion.id).count;
-        jungleWinRate =  number_to_percentage(jungle_win.to_f/(jungle_win+jungle_loss));
+        jungleWinRate =  number_to_percentage(jungle_win.to_f/(jungle_win+jungle_loss)) + ' | ' + (jungle_win+jungle_loss).to_s + ' played';
         mid_win = Game.where(WIN_MID:champion.id).count;
         mid_loss = Game.where(LOSE_MID:champion.id).count;
-        midWinRate =  number_to_percentage(mid_win.to_f/(mid_win+mid_loss));
+        midWinRate =  number_to_percentage(mid_win.to_f/(mid_win+mid_loss)) + ' | ' + (mid_win+mid_loss).to_s + ' played';
         adc_win = Game.where(WIN_adc:champion.id).count;
         adc_loss = Game.where(LOSE_adc:champion.id).count;
-        adcWinRate =  number_to_percentage(adc_win.to_f/(adc_win+adc_loss));
+        adcWinRate =  number_to_percentage(adc_win.to_f/(adc_win+adc_loss))  + ' | ' + (adc_win+adc_loss).to_s + ' played';
         support_win = Game.where(WIN_SUP:champion.id).count;
         support_loss = Game.where(LOSE_SUP:champion.id).count;
-        supportWinRate =  number_to_percentage(support_win.to_f/(support_win+support_loss));
+        supportWinRate =  number_to_percentage(support_win.to_f/(support_win+support_loss))  + ' | ' + (support_win+support_loss).to_s + ' played';
 
         total_games = top_win+top_loss+jungle_win+jungle_loss+mid_win+mid_loss+adc_win+adc_loss+support_win+support_loss;
         currentChamp = ChampionStats.new(champion.name, topWinRate,jungleWinRate,midWinRate,adcWinRate,supportWinRate, total_games);
         @@champsArray.append(currentChamp);
       end
-    #end
+    end
     render :json => @@champsArray.to_json;
   end
 end
