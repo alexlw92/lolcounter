@@ -9,7 +9,7 @@ class SummonerController < ApplicationController
     if input_name and input_region != nil
       @displayInfo = true
 
-      input_name = input_name.gsub(/\s+/, "")
+      input_name = input_name.gsub(/\s+/, "").downcase
 
       result = RiotApiModel.summoner_lookup(input_name,input_region)
       if result.is_a?Integer
