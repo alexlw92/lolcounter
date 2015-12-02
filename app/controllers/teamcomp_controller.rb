@@ -1,6 +1,6 @@
 class TeamcompController < ApplicationController
   def index
-    #expires_in 10.minutes, :public => true
+    expires_in 10.minutes, :public => true
     top_champ = params[:top]
     jungle_champ = params[:jungle]
     mid_champ = params[:mid]

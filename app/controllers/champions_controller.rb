@@ -2,7 +2,7 @@ class ChampionsController < ApplicationController
   @@champsArray = Array.new; #Array used to keep track of all champion stats, so we don't query every time (kind of like caching)
 
   def index #This function just returns a list of all champions
-    #expires_in 10.minutes, :public => true
+    expires_in 10.minutes, :public => true
     @champions = Champion.all;
   end
 
