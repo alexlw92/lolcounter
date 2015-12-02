@@ -72,7 +72,7 @@ FROM
     FROM
         games
     WHERE
-        win_#{role} = #{champ_id}
+        win_#{role} = #{champ_id} and lose_#{role} is not null
     GROUP BY lose_#{role}) L
         LEFT JOIN
     (SELECT
@@ -83,7 +83,7 @@ FROM
         lose_#{role} = #{champ_id}
     GROUP BY win_#{role}) W ON L.lose_#{role} = W.win_#{role}
     WHERE IFNULL(L.c, 0)+IFNULL(W.c, 0) > 10
-    ORDER BY winrate ASC
+    ORDER BY winrate DESC
     LIMIT 3"
     results = ActiveRecord::Base.connection.execute(sql).as_json
     counter = Counter.find_or_create_by(champion_id: champ_id, role: role)
