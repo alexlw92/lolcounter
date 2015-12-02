@@ -91,20 +91,20 @@ FROM
     results.each{ |c|
       if(it==1)
         if (results[0][1] >= results[0][2])
-          counter.update(first_counter_name: Champion.find_by_id(results[0][0]).name)
+          counter.update(first_counter_name: Champion.find_by_id(results[0][0]).id)
           counter.update(wins_against_first: results[0][1])
           counter.update(losses_against_first: results[0][2])
         end
 
       elsif(it==2)
         if (results[1][1] >= results[1][2])
-          counter.update(second_counter_name: Champion.find_by_id(results[1][0]).name)
+          counter.update(second_counter_name: Champion.find_by_id(results[1][0]).id)
           counter.update(wins_against_second: results[1][1])
           counter.update(losses_against_second: results[1][2])
         end
       elsif(it==3)
         if (results[2][1] >= results[2][2])
-          counter.update(third_counter_name: Champion.find_by_id(results[2][0]).name)
+          counter.update(third_counter_name: Champion.find_by_id(results[2][0]).id)
           counter.update(wins_against_third: results[2][1])
           counter.update(losses_against_third: results[2][2])
         end

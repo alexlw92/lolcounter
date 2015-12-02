@@ -30,12 +30,13 @@ class CounterpicksController < ApplicationController
         @valid = 2
         return
       end
-      @first_counter_name = first_counter[0]
+      @first_counter_name = @champion.where(id:first_counter[0]).pluck(:name)[0]
       if(@first_counter_name == nil)
         @valid = 2
         return
       end
-      @first_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + @first_counter_name.to_s + '.png'
+      @first_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + @first_counter_name + '.png'
+      @first_counter_name = @champion.where(id:first_counter[0]).pluck(:nickname)[0]
 
       wins_against_first = @counters.pluck(:wins_against_first)
       losses_against_first = @counters.pluck(:losses_against_first)
@@ -47,12 +48,13 @@ class CounterpicksController < ApplicationController
         @valid = 2
         return
       end
-      @second_counter_name = second_counter[0]
+      @second_counter_name = @champion.where(id:second_counter[0]).pluck(:name)[0]
       if(@second_counter_name == nil)
         @valid = 1
         return
       end
-      @second_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + @second_counter_name.to_s + '.png'
+      @second_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + @second_counter_name + '.png'
+      @second_counter_name = @champion.where(id:second_counter[0]).pluck(:nickname)[0]
 
       wins_against_second = @counters.pluck(:wins_against_second)
       losses_against_second = @counters.pluck(:losses_against_second)
@@ -64,12 +66,13 @@ class CounterpicksController < ApplicationController
         @valid = 2
         return
       end
-      @third_counter_name = third_counter[0]
+      @third_counter_name = @champion.where(id:third_counter[0]).pluck(:name)[0]
       if(@third_counter_name == nil)
         @valid = 1
         return
       end
-      @third_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + @third_counter_name.to_s + '.png'
+      @third_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + @third_counter_name + '.png'
+      @third_counter_name = @champion.where(id:third_counter[0]).pluck(:nickname)[0]
 
       wins_against_third = @counters.pluck(:wins_against_third)
       losses_against_third = @counters.pluck(:losses_against_third)
