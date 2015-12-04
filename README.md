@@ -6,6 +6,9 @@
 ###Description
 Statistical Data Analysis Site for League of Legends matches
 
+###Report
+<a href="https://docs.google.com/presentation/d/1twdNTyXrteqfG_JnpDzrQDpKiyvlnmmXEM7KwwQA76c/edit?usp=sharing">Here</a>  
+
 ###Screenshots  
 <img src="https://i.gyazo.com/8f084c469bcf91bee8a66c5c30870d78.jpg">
 
