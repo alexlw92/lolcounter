@@ -20,26 +20,12 @@ class TeamcompController < ApplicationController
 
     #    puts("hello")
     if(top_champ != nil && jungle_champ != nil && mid_champ != nil && adc_champ != nil && support_champ != nil)
-      top_url_name = top_champ.gsub(/\s|"|'/, '');
-      jungle_url_name = jungle_champ.gsub(/\s|"|'/, '');
-      mid_url_name = mid_champ.gsub(/\s|"|'/, '');
-      adc_url_name = adc_champ.gsub(/\s|"|'/, '');
-      support_url_name = support_champ.gsub(/\s|"|'/, '');
-      if(top_url_name == 'Wukong')
-          top_url_name = 'MonkeyKing'
-      end
-      if(jungle_url_name == 'Wukong')
-        jungle_url_name = 'MonkeyKing'
-      end
-      if(mid_url_name == 'Wukong')
-        mid_url_name = 'MonkeyKing'
-      end
-      if(adc_url_name == 'Wukong')
-        adc_url_name = 'MonkeyKing'
-      end
-      if(support_url_name == 'Wukong')
-        support_url_name = 'MonkeyKing'
-      end
+      top_url_name = @champion.where(nickname:@top_name).pluck(:name)[0]#top_champ.gsub(/\s|"|'/, '');
+      jungle_url_name = @champion.where(nickname:@jungle_name).pluck(:name)[0]#jungle_champ.gsub(/\s|"|'/, '');
+      mid_url_name = @champion.where(nickname:@mid_name).pluck(:name)[0]#mid_champ.gsub(/\s|"|'/, '');
+      adc_url_name = @champion.where(nickname:@adc_name).pluck(:name)[0]#adc_champ.gsub(/\s|"|'/, '');
+      support_url_name = @champion.where(nickname:@support_name).pluck(:name)[0]#support_champ.gsub(/\s|"|'/, '');
+
       @top_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + top_url_name + '.png'
       @jungle_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + jungle_url_name + '.png'
       @mid_icon = 'http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/' + mid_url_name + '.png'
@@ -53,11 +39,11 @@ class TeamcompController < ApplicationController
       @valid = 'empty';
     end
 
-    @top = @champion.where(name:@top_name).pluck(:id)
-    @jungle = @champion.where(name:@jungle_name).pluck(:id)
-    @mid = @champion.where(name:@mid_name).pluck(:id)
-    @adc = @champion.where(name:@adc_name).pluck(:id)
-    @support = @champion.where(name:@support_name).pluck(:id)
+    @top = @champion.where(nickname:@top_name).pluck(:id)
+    @jungle = @champion.where(nickname:@jungle_name).pluck(:id)
+    @mid = @champion.where(nickname:@mid_name).pluck(:id)
+    @adc = @champion.where(nickname:@adc_name).pluck(:id)
+    @support = @champion.where(nickname:@support_name).pluck(:id)
     #if(@champion.where(name:@top_name).count == 1 && @champion.where(name:@jungle_name).count == 1 && @champion.where(name:@mid_name).count == 1 && @champion.where(name:@adc_name).count == 1 && @champion.where(name:@support_name).count == 1)
     if(!@top.blank? && !@jungle.blank? && !@mid.blank? && !@adc.blank? && !@support.blank?)
       @wins = @games.where(WIN_TOP:@top,WIN_JG:@jungle,WIN_MID:@mid,WIN_ADC:@adc,WIN_SUP:@support).count

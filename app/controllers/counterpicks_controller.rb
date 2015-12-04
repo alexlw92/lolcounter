@@ -16,7 +16,7 @@ class CounterpicksController < ApplicationController
     @counters = Counter.all
 
     @valid = 0
-    @champion_id = @champion.where(name:@champion_name).pluck(:id)
+    @champion_id = @champion.where(nickname:@champion_name).pluck(:id)
 
     if(@lane == nil) #Invalid lane in argument
       @valid = 3
