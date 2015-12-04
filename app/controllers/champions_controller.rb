@@ -90,7 +90,7 @@ class ChampionsController < ApplicationController
       support_loss = mapSupLoss[champion.id]
       supportWinRate = number_to_percentage(support_win.to_f/(support_win+support_loss)) + ' | ' + (support_win+support_loss).to_s + ' played';
       total_games = top_win+top_loss+jungle_win+jungle_loss+mid_win+mid_loss+adc_win+adc_loss+support_win+support_loss;
-      currentChamp = ChampionStats.new(champion.name,topWinRate,jungleWinRate,midWinRate,adcWinRate,supportWinRate,total_games);
+      currentChamp = ChampionStats.new(champion.nickname,topWinRate,jungleWinRate,midWinRate,adcWinRate,supportWinRate,total_games);
       @@champsArray.append(currentChamp);
     end
     render :json => @@champsArray.to_json;

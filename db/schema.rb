@@ -15,12 +15,14 @@ ActiveRecord::Schema.define(version: 20151104045139) do
 
   create_table "champions", force: :cascade do |t|
     t.string   "name",       limit: 255
+    t.string   "nickname",   limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
   create_table "counters", force: :cascade do |t|
     t.integer  "champion_id",           limit: 4
+    t.string   "role",                  limit: 255
     t.string   "first_counter_name",    limit: 255
     t.integer  "wins_against_first",    limit: 4
     t.integer  "losses_against_first",  limit: 4
