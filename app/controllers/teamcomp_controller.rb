@@ -48,11 +48,11 @@ class TeamcompController < ApplicationController
     if(!@top.blank? && !@jungle.blank? && !@mid.blank? && !@adc.blank? && !@support.blank?)
       @wins = @games.where(WIN_TOP:@top,WIN_JG:@jungle,WIN_MID:@mid,WIN_ADC:@adc,WIN_SUP:@support).count
       @losses = @games.where(LOSE_TOP:@top,LOSE_JG:@jungle,LOSE_MID:@mid,LOSE_ADC:@adc,LOSE_SUP:@support).count
-      @num_games = 0.0
+      @num_games = 0
       @num_games = @wins + @losses
       if(@num_games > 0)
-        @win_rate = @wins/(@num_games+0.0)
-        if(@win_rate == 1.0)
+        @win_rate = ((@wins/(@num_games+0.0))*100).to_i
+        if(@win_rate == 1)
           @win_rate = 1
         end
       else
